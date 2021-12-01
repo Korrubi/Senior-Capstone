@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/profile"
+            android:layout_width="120dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="145dp"
+            android:layout_marginTop="575dp"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/MediumBlue"
+            android:text="View Profile"></Button>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-25dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/proxima_nova_reg"
+            android:text="DISH DISCOVERY"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="35dp">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/recommend"
+            android:layout_width="210dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/DarkGreen"
+            android:text="Recommend Me!"></Button>
+
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="210dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:inputType="text"
+            android:text="Search Dish!"
+            android:textAlignment="center"></EditText>
+    </LinearLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/japanese"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="225dp"
+            android:backgroundTint="@color/DarkGreen"
+            android:text="Japanese"></Button>
+
+        <Button
+            android:id="@+id/mexican"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="225dp"
+            android:backgroundTint="@color/DarkGreen"
+            android:text="Mexican"></Button>
+    </LinearLayout>
+
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/american"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="350dp"
+            android:backgroundTint="@color/DarkGreen"
+            android:text="American">
+        </Button>
+
+        <Button
+            android:id="@+id/chinese"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="350dp"
+            android:backgroundTint="@color/DarkGreen"
+            android:text="Chinese">
+        </Button>
+    </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/thai"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="485dp"
+                android:backgroundTint="@color/DarkGreen"
+                android:text="Thai"></Button>
+
+            <Button
+                android:id="@+id/turkish"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="485dp"
+                android:backgroundTint="@color/DarkGreen"
+                android:text="turkish"></Button>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/china"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="320dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/china_flag">
+        </com.google.android.material.imageview.ShapeableImageView>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/usa"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="320dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/usa_flag"></com.google.android.material.imageview.ShapeableImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/mexico"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="195dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/mexico_flag"></com.google.android.material.imageview.ShapeableImageView>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/nippon"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="195dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/japan_flag"></com.google.android.material.imageview.ShapeableImageView>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/thailand"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="455dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/thailand_flag">
+
+        </com.google.android.material.imageview.ShapeableImageView>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/turkey"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="455dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/turkey_flag">
+        </com.google.android.material.imageview.ShapeableImageView>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

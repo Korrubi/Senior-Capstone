@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="page_name">Create an Account</string>
+    <string name="field">Enter Username: </string>
+    <string name="edit_name">Username</string>
+    <string name="user_hint">Username</string>
+    <string name="done"> Done </string>
+    <string name="email_hint">Enter Email Address</string>
+    <string name="name_hint">Enter Name</string>
+    <string name="age_hint">Enter Age</string>
+    <string name="location_hint">Enter Location (ZIP)</string>
+    <string name="password_hint">Password</string>
+    <string name="confirm_hint">Confirm Password</string>
+</resources>
