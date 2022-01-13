@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <ImageButton
-            android:id="@+id/allergyBackButton"
+        <ImageButton
+            android:id="@+id/cuisineBackButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -24,29 +24,29 @@
         </ImageButton>
 
         <TextView
-            android:id="@+id/allergyHeader"
+            android:id="@+id/cuisineHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"
             android:fontFamily="@font/proxima_nova_reg"
-            android:text="@string/AllergyTitle"
+            android:text="@string/CuisineTitle"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="35dp">
 
         </TextView>
 
-            <ImageButton
-                android:id="@+id/allergyForwardButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/ic_baseline_arrow_forward_24">
+        <ImageButton
+            android:id="@+id/cuisineForwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_arrow_forward_24">
 
-            </ImageButton>
+        </ImageButton>
 
     </RelativeLayout>
 
@@ -70,9 +70,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
-                android:text="@string/Allergy_1"
+                android:text="@string/Cuisine_1"
                 android:textSize="34sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView8"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout"
                 tools:layout_editor_absoluteX="144dp" />
 
             <CheckBox
@@ -80,9 +80,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/Allergy_5"
+                android:text="@string/Cuisine_2"
                 android:textSize="34sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView12"
                 tools:layout_editor_absoluteX="132dp" />
 
             <CheckBox
@@ -90,9 +89,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/Allergy_2"
+                android:text="@string/Cuisine_3"
                 android:textSize="34sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView6"
                 tools:layout_editor_absoluteX="173dp" />
 
             <CheckBox
@@ -100,9 +98,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/Allergy_4"
+                android:text="@string/Cuisine_4"
                 android:textSize="34sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView11"
                 tools:layout_editor_absoluteX="168dp" />
 
             <CheckBox
@@ -110,9 +107,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/Allergy_3"
+                android:text="@string/Cuisine_5"
                 android:textSize="34sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView9"
                 tools:layout_editor_absoluteX="141dp" />
 
             <CheckBox
@@ -120,9 +116,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/Allergy_6"
+                android:text="@string/Cuisine_6"
                 android:textSize="34sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView2"
                 tools:layout_editor_absoluteX="157dp" />
 
             <CheckBox
@@ -130,9 +125,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/Allergy_7"
+                android:text="@string/Cuisine_7"
                 android:textSize="34sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView5"
                 tools:layout_editor_absoluteX="177dp" />
 
             <CheckBox
@@ -140,40 +134,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/Allergy_8"
+                android:text="@string/Cuisine_8"
                 android:textSize="34sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView3"
-                tools:layout_editor_absoluteX="174dp" />
+                tools:layout_editor_absoluteX="177dp" />
 
             <CheckBox
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/Allergy_9"
+                android:text="@string/Cuisine_9"
                 android:textSize="34sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView4"
-                tools:layout_editor_absoluteX="156dp" />
-
-            <CheckBox
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="@string/Allergy_10"
-                android:textSize="34sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView10"
-                tools:layout_editor_absoluteX="144dp" />
+                tools:layout_editor_absoluteX="177dp" />
 
             <Button
-                android:id="@+id/allergy_preference"
+                android:id="@+id/cuisine_preference"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/layout_margin"
                 android:backgroundTint="@color/colorAccent"
                 android:fontFamily="@font/roboto"
-                android:text="@string/save_AllergyPref" />
+                android:text="@string/save_CuisinePref" />
 
         </LinearLayout>
     </ScrollView>

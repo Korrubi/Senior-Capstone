@@ -13,6 +13,12 @@
             android:name=".AllergyActivity"
             android:exported="false" />
         <activity
+            android:name=".DietActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CuisineActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserProfile"
             android:exported="false" />
         <activity

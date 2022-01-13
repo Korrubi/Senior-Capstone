@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="AllergyTitle">Allergies</string>
     <string name="Allergy_1">Peanuts</string>
     <string name="Allergy_2">Milk</string>
-    <string name="Header">Allergies</string>
     <string name="Allergy_3">Shellfish</string>
     <string name="Allergy_4">Eggs</string>
     <string name="Allergy_5">Tree Nuts</string>
@@ -11,4 +11,5 @@
     <string name="Allergy_8">Fish</string>
     <string name="Allergy_9">Gluten</string>
     <string name="Allergy_10">Sesame</string>
+    <string name="save_AllergyPref">Save Preferences</string>
 </resources>

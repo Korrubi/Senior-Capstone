@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="DietTitle">Diets</string>
+    <string name="Diet_1">Halal</string>
+    <string name="Diet_2">Keto</string>
+    <string name="Diet_3">Kosher</string>
+    <string name="Diet_4">Vegetarian</string>
+    <string name="Diet_5">Vegan</string>
+    <string name="Diet_6">Pescetarian</string>
+    <string name="Diet_7">Low-Carb</string>
+    <string name="Diet_8">Mediterranean</string>
+    <string name="Diet_9">Test</string>
+    <string name="Diet_10">Test1</string>
+
+    <string name="save_dietPref">Save Preferences</string>
+
+</resources>

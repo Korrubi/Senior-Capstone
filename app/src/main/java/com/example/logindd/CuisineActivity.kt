@@ -6,21 +6,22 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 
-class AllergyActivity : AppCompatActivity() {
+class CuisineActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_allergy)
+        setContentView(R.layout.activity_cuisine)
 
-        val allergyBackButton = findViewById<ImageButton>(R.id.allergyBackButton)
-        allergyBackButton.setOnClickListener{
+        val cuisineBackButton = findViewById<ImageButton>(R.id.cuisineBackButton)
+        cuisineBackButton.setOnClickListener{
             val intent = Intent(this, UserProfile::class.java)
             startActivity(intent)
         }
 
-        val allergyForwardButton = findViewById<ImageButton>(R.id.allergyForwardButton)
-        allergyForwardButton.setOnClickListener{
-            val intent = Intent(this, DietActivity::class.java)
+        val cuisineForwardButton = findViewById<ImageButton>(R.id.cuisineForwardButton)
+        cuisineForwardButton.setOnClickListener{
+            val intent = Intent(this, AllergyActivity::class.java)
             startActivity(intent)
         }
+
     }
 }

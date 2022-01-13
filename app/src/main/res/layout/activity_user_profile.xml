@@ -8,17 +8,16 @@
 
     <View
         android:id="@+id/rectangle_at_the_top"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_alignParentTop="true"
         android:background="#DDDDDD"
         android:backgroundTint="@android:color/holo_green_light"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="-2dp"
-        tools:layout_editor_absoluteY="-1dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/butBackArrow"
@@ -111,26 +110,13 @@
         app:layout_constraintTop_toBottomOf="@+id/butEmail" />
 
     <Button
-        android:id="@+id/butChange_Food_Pref"
+        android:id="@+id/butChange_Email"
         android:layout_width="wrap_content"
         android:layout_height="37dp"
         android:layout_marginStart="44dp"
         android:background="?attr/selectableItemBackground"
         android:backgroundTint="@color/white"
-        android:text="Change Food preference"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
-
-    <Button
-        android:id="@+id/allergyPref"
-        android:layout_width="wrap_content"
-        android:layout_height="37dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="80dp"
-        android:background="?attr/selectableItemBackground"
-        android:backgroundTint="@color/white"
-        android:text="Change Allergy preference"
+        android:text="Change Email"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
@@ -145,6 +131,46 @@
         android:text="Change password"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/butChange_Food_Pref" />
+        app:layout_constraintTop_toBottomOf="@+id/butChange_Email" />
+
+    <Button
+        android:id="@+id/butChange_Diet_Pref"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginStart="44dp"
+        android:background="?attr/selectableItemBackground"
+        android:backgroundTint="@color/white"
+        android:text="Change Diet Preference"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butChange_Password" />
+
+    <Button
+        android:id="@+id/butChange_Cuisine_Pref"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginStart="44dp"
+        android:background="?attr/selectableItemBackground"
+        android:backgroundTint="@color/white"
+        android:text="Change Cuisine Preference"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butChange_Diet_Pref" />
+
+    <Button
+        android:id="@+id/butChange_Allergy_Pref"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_marginStart="44dp"
+        android:background="?attr/selectableItemBackground"
+        android:backgroundTint="@color/white"
+        android:text="Change Allergy preference"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butChange_Cuisine_Pref" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
