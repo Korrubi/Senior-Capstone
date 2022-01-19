@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.logindd">
+    package="com.example.dishdiscovery">
 
     <application
         android:allowBackup="true"
@@ -10,25 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginDD">
         <activity
-            android:name=".AllergyActivity"
+            android:name="com.example.dishdiscovery.AllergyActivity"
             android:exported="false" />
         <activity
-            android:name=".DietActivity"
+            android:name="com.example.dishdiscovery.DietActivity"
             android:exported="false" />
         <activity
-            android:name=".CuisineActivity"
+            android:name="com.example.dishdiscovery.CuisineActivity"
             android:exported="false" />
         <activity
-            android:name=".UserProfile"
+            android:name="com.example.dishdiscovery.UserProfile"
             android:exported="false" />
         <activity
-            android:name=".UserSignActivity"
+            android:name="com.example.dishdiscovery.PasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name="com.example.dishdiscovery.EmailActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.dishdiscovery.UserSignActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.dishdiscovery.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.dishdiscovery.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
