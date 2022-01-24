@@ -3,14 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/drawable/ellipse_1.xml" value="0.24074074074074073" />
+        <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.24074074074074073" />
         <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/layout/activity_allergy.xml" value="0.25" />
-        <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/layout/activity_change_email.xml" value="0.33" />
+        <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/layout/activity_change_email.xml" value="0.1" />
         <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/layout/activity_change_password.xml" value="0.22" />
         <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/layout/activity_cuisine.xml" value="0.1" />
         <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/layout/activity_diet.xml" value="0.22" />
         <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/layout/activity_main.xml" value="0.396286231884058" />
-        <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/layout/activity_user_profile.xml" value="0.5" />
+        <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/layout/activity_user_profile.xml" value="0.4777777777777778" />
         <entry key="..\:/Users/Jarrel/AndroidStudioProjects/dishdiscovery-dishdiscovery-main/app/src/main/res/layout/activity_user_sign.xml" value="0.1" />
       </map>
     </option>

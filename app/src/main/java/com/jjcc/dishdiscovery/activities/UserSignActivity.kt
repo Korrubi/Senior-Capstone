@@ -1,4 +1,4 @@
-package com.example.dishdiscovery
+package com.jjcc.dishdiscovery
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

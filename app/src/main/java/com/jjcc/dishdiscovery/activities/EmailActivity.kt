@@ -1,22 +1,21 @@
-//For the home page of DD
-package com.example.dishdiscovery
+package com.jjcc.dishdiscovery
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-
-class HomeActivity : AppCompatActivity() {
+class EmailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_change_email)
 
-        //links up profile from home
-        val profileButton = findViewById<Button>(R.id.profile)
-        profileButton.setOnClickListener{
+        val emailBackButton = findViewById<Button>(R.id.butEmailBackArrow)
+        emailBackButton.setOnClickListener{
             val intent = Intent(this, UserProfile::class.java)
             startActivity(intent)
         }
+
     }
+
 }

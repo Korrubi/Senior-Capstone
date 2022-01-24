@@ -1,5 +1,5 @@
 //From the initial start up page of DD
-package com.example.dishdiscovery
+package com.jjcc.dishdiscovery
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

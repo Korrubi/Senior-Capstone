@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dishdiscovery">
+    package="com.jjcc.dishdiscovery">
 
     <application
         android:allowBackup="true"
@@ -10,31 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginDD">
         <activity
-            android:name="com.example.dishdiscovery.AllergyActivity"
+            android:name="com.jjcc.dishdiscovery.AllergyActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.dishdiscovery.DietActivity"
+            android:name="com.jjcc.dishdiscovery.DietActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.dishdiscovery.CuisineActivity"
+            android:name="com.jjcc.dishdiscovery.CuisineActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.dishdiscovery.UserProfile"
+            android:name="com.jjcc.dishdiscovery.UserProfile"
             android:exported="false" />
         <activity
-            android:name="com.example.dishdiscovery.PasswordActivity"
+            android:name="com.jjcc.dishdiscovery.PasswordActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.dishdiscovery.EmailActivity"
+            android:name="com.jjcc.dishdiscovery.EmailActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.dishdiscovery.UserSignActivity"
+            android:name="com.jjcc.dishdiscovery.UserSignActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.dishdiscovery.HomeActivity"
+            android:name="com.jjcc.dishdiscovery.HomeActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.dishdiscovery.MainActivity"
+            android:name="com.jjcc.dishdiscovery.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
