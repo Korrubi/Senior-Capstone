@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcomeString">Welcome!</string>
+    <string name="loginWelcome">Please Sign in to Continue</string>
+    <string name="un">Username</string>
+    <string name="pw">Password</string>
+    <string name="sn">Sign In!</string>
+
+</resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/eatingPic"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="175dp"
+        android:src="@drawable/eating"
+        app:shapeAppearanceOverlay="@style/loginRound">
+    </com.google.android.material.imageview.ShapeableImageView>
+</RelativeLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/greenRectangle"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/ellipse_1" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="100dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="275dp"
+        android:id="@+id/fnpLogo"
+        android:src="@drawable/fns">
+    </com.google.android.material.imageview.ShapeableImageView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="292dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="425dp"
+            android:backgroundTint="@color/perfectgreen"
+            android:text="@string/un"
+            android:textColor="@color/black"></Button>
+
+        <Button
+            android:layout_width="292dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="500dp"
+            android:backgroundTint="@color/perfectgreen"
+            android:text="@string/pw"
+            android:textColor="@color/black"></Button>
+
+        <Button
+            android:layout_width="292dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="575dp"
+            android:backgroundTint="@color/perfectgreen"
+            android:text="@string/sn"
+            android:textColor="@color/black"></Button>
+    </RelativeLayout>
+
+</RelativeLayout>
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:layout_width="122dp"
+        android:layout_height="31dp"
+        android:fontFamily="@font/avenir_roman"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.066"
+        android:text="@string/welcomeString"/>
+
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:layout_width="167dp"
+        android:layout_height="65dp"
+        android:fontFamily="@font/avenir_roman"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.141"
+        android:text="@string/loginWelcome"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

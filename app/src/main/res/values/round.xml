@@ -5,4 +5,13 @@
             58%
         </item>
     </style>
+
+    <style name="loginRound">
+        <item name="cornerSizeTopLeft">
+            30%
+        </item>
+        <item name="cornerSizeTopRight">
+            30%
+        </item>
+    </style>
 </resources>
