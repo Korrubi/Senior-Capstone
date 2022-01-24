@@ -9,32 +9,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginDD">
+
         <activity
-            android:name="com.jjcc.dishdiscovery.AllergyActivity"
+            android:name="com.jjcc.dishdiscovery.activities.LoginActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.DietActivity"
+            android:name="com.jjcc.dishdiscovery.activities.AllergyActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.CuisineActivity"
+            android:name="com.jjcc.dishdiscovery.activities.DietActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.UserProfile"
+            android:name="com.jjcc.dishdiscovery.activities.CuisineActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.PasswordActivity"
+            android:name="com.jjcc.dishdiscovery.activities.UserProfile"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.EmailActivity"
+            android:name="com.jjcc.dishdiscovery.activities.PasswordActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.UserSignActivity"
+            android:name="com.jjcc.dishdiscovery.activities.EmailActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.HomeActivity"
+            android:name="com.jjcc.dishdiscovery.activities.UserSignActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.MainActivity"
+            android:name="com.jjcc.dishdiscovery.activities.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.jjcc.dishdiscovery.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
