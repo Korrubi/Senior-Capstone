@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="createAcc"> Create an Account</string>
+    <string name="enterEmail">Enter Email Address</string>
+    <string name="enterName">Enter Name</string>
+    <string name="enterPassword">Enter Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="Done">Done</string>
+</resources>

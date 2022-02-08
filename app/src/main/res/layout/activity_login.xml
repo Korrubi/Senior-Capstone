@@ -6,9 +6,23 @@
     android:layout_height="match_parent"
     android:background="#ffffff">
 
-<RelativeLayout
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/greenRectangle"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/ellipse_1" />
+
+    <View
+        android:id="@+id/rectangle_3"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="175dp"
+        android:background="@drawable/rect_round_login" />
+
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/eatingPic"
@@ -17,63 +31,73 @@
         android:layout_marginTop="175dp"
         android:src="@drawable/eating"
         app:shapeAppearanceOverlay="@style/loginRound">
+
+
     </com.google.android.material.imageview.ShapeableImageView>
-</RelativeLayout>
+</FrameLayout>
 
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
-        android:id="@+id/greenRectangle"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/ellipse_1" />
-
     <com.google.android.material.imageview.ShapeableImageView
-        android:layout_width="100dp"
+        android:layout_width="135dp"
         android:layout_height="115dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="275dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="245dp"
         android:id="@+id/fnpLogo"
-        android:src="@drawable/fns">
+        android:src="@drawable/dd_new_logo">
     </com.google.android.material.imageview.ShapeableImageView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
+        <EditText
+            android:id="@+id/signInUsername"
             android:layout_width="292dp"
             android:layout_height="55dp"
             android:layout_marginLeft="65dp"
             android:layout_marginTop="425dp"
+            android:background="@drawable/rectangle"
             android:backgroundTint="@color/perfectgreen"
-            android:text="@string/un"
-            android:textColor="@color/black"></Button>
+            android:fontFamily="@font/avenir_roman"
+            android:hint="@string/un"
+            android:textAlignment="center"
+            android:textColor="@color/black"></EditText>
 
-        <Button
+        <EditText
+            android:id="@+id/signInPassword"
             android:layout_width="292dp"
             android:layout_height="55dp"
             android:layout_marginLeft="65dp"
             android:layout_marginTop="500dp"
+            android:background="@drawable/rectangle"
             android:backgroundTint="@color/perfectgreen"
-            android:text="@string/pw"
-            android:textColor="@color/black"></Button>
+            android:fontFamily="@font/avenir_roman"
+            android:hint="@string/pw"
+            android:inputType="textPassword"
+            android:maxLength="100"
+            android:textAlignment="center"
+            android:textColor="@color/black"></EditText>
 
         <Button
+            android:id="@+id/signInButton"
             android:layout_width="292dp"
             android:layout_height="55dp"
             android:layout_marginLeft="65dp"
             android:layout_marginTop="575dp"
-            android:backgroundTint="@color/perfectgreen"
+            android:background="@drawable/rectangle"
+            android:fontFamily="@font/avenir_roman"
             android:text="@string/sn"
-            android:textColor="@color/black"></Button>
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:backgroundTint="#5750A74E"></Button>
     </RelativeLayout>
 
 </RelativeLayout>
     <TextView
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="50dp"
         android:layout_width="122dp"
         android:layout_height="31dp"
         android:fontFamily="@font/avenir_roman"
@@ -89,7 +113,7 @@
         android:text="@string/welcomeString"/>
 
     <TextView
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="50dp"
         android:layout_width="167dp"
         android:layout_height="65dp"
         android:fontFamily="@font/avenir_roman"

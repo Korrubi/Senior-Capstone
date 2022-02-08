@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dishDiscovery"> dish discovery</string>
+    <string name="login">Login</string>
+    <string name="createAccStart">Create Account</string>
+    <string name="guest">Continue as Guest</string>
+    <string name="mealTimeMade">meal time, made easy.</string>
+
+
+</resources>

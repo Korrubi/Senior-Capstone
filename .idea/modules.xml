@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/dishdiscovery-dishdiscovery-main.iml" filepath="$PROJECT_DIR$/.idea/dishdiscovery-dishdiscovery-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/loginDD.iml" filepath="$PROJECT_DIR$/.idea/modules/loginDD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/loginDD.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/loginDD.app.iml" />
     </modules>
   </component>
 </project>

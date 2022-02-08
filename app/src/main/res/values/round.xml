@@ -8,6 +8,16 @@
 
     <style name="loginRound">
         <item name="cornerSizeTopLeft">
+            40%
+        </item>
+        <item name="cornerSizeTopRight">
+            40%
+        </item>
+    </style>
+
+
+    <style name="allergyRound">
+        <item name="cornerSizeTopLeft">
             30%
         </item>
         <item name="cornerSizeTopRight">

@@ -1,162 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/field_margin"
-    android:orientation="vertical"
-    android:padding="@dimen/small_padding"
-    app:layout_marginBaseline="@dimen/field_margin"
-    tools:context=".activities.MainActivity">
-
-
-    <TextView
-        android:id="@+id/textView"
+    android:background="#ffffff">
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/layout_margin"
-        android:text="@string/page_name"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/text_size"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
+        <View
+            android:id="@+id/greenRectangle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="300dp"
+            android:background="@drawable/ellipse_1" />
 
-            <EditText
-                android:id="@+id/username_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/field_margin"
-                android:ems="10"
-                android:hint="@string/user_hint"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:maxLines="1"
-                android:minHeight="48dp"
-                android:padding="@dimen/small_padding"
-                android:textAlignment="center"
-                android:textColorHighlight="#7cff88"
-                android:textStyle="normal" />
+        <View
+            android:id="@+id/rectangle_3"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/rect_round_login" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/eatingPic"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="145dp"
+            android:src="@drawable/shopping_cart"
+            app:shapeAppearanceOverlay="@style/loginRound"></com.google.android.material.imageview.ShapeableImageView>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <EditText
                 android:id="@+id/email_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:layout_margin="@dimen/field_margin"
-                android:hint="@string/email_hint"
-                android:inputType="textEmailAddress"
-                android:lines="1"
-                android:maxLines="1"
-                android:minHeight="48dp"
-                android:padding="@dimen/small_padding"
+                android:layout_width="289dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="385dp"
+                android:background="@drawable/rectangle"
+                android:backgroundTint="@color/perfectgreen"
+                android:fontFamily="@font/avenir_roman"
+                android:hint="@string/enterEmail"
+                android:maxLength="100"
                 android:textAlignment="center"
-                android:textColorHighlight="#7cff88"
-                android:textStyle="normal" />
+                android:textColor="@color/black"></EditText>
 
             <EditText
                 android:id="@+id/name_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/field_margin"
-                android:ems="10"
-                android:hint="@string/name_hint"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:maxLines="1"
-                android:minHeight="48dp"
-                android:padding="@dimen/small_padding"
+                android:layout_width="289dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="440dp"
+                android:background="@drawable/rectangle"
+                android:backgroundTint="@color/perfectgreen"
+                android:fontFamily="@font/avenir_roman"
+                android:hint="@string/enterName"
+                android:maxLength="100"
                 android:textAlignment="center"
-                android:textColorHighlight="#7cff88"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/age_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/field_margin"
-                android:ems="10"
-                android:hint="@string/age_hint"
-                android:inputType="textPersonName"
-                android:lines="1"
-                android:maxLines="1"
-                android:minHeight="48dp"
-                android:padding="@dimen/small_padding"
-                android:textAlignment="center"
-                android:textColorHighlight="#7cff88"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/location_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/field_margin"
-                android:ems="10"
-                android:hint="@string/location_hint"
-                android:inputType="textPostalAddress"
-                android:lines="1"
-                android:maxLines="1"
-                android:minHeight="48dp"
-                android:padding="@dimen/small_padding"
-                android:textAlignment="center"
-                android:textColorHighlight="#7cff88"
-                android:textStyle="normal" />
+                android:textColor="@color/black"></EditText>
 
             <EditText
                 android:id="@+id/create_pw_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/field_margin"
-                android:ems="10"
-                android:hint="@string/password_hint"
+                android:layout_width="289dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="495dp"
+                android:background="@drawable/rectangle"
+                android:backgroundTint="@color/perfectgreen"
+                android:fontFamily="@font/avenir_roman"
+                android:hint="@string/enterPassword"
                 android:inputType="textPassword"
-                android:lines="1"
-                android:maxLines="1"
-                android:minHeight="48dp"
-                android:padding="@dimen/small_padding"
+                android:maxLength="100"
                 android:textAlignment="center"
-                android:textColorHighlight="#7cff88"
-                android:textStyle="normal" />
+                android:textColor="@color/black"></EditText>
 
             <EditText
-                android:id="@+id/confirm_pw_edit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/field_margin"
-                android:ems="10"
-                android:hint="@string/confirm_hint"
+                android:id="@+id/confirm_create_pw_edit"
+                android:layout_width="289dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="550dp"
+                android:background="@drawable/rectangle"
+                android:backgroundTint="@color/perfectgreen"
+                android:fontFamily="@font/avenir_roman"
+                android:hint="@string/confirmPassword"
                 android:inputType="textPassword"
-                android:lines="1"
-                android:maxLines="1"
-                android:minHeight="48dp"
-                android:padding="@dimen/small_padding"
+                android:maxLength="100"
                 android:textAlignment="center"
-                android:textColorHighlight="#7cff88"
-                android:textStyle="normal" />
+                android:textColor="@color/black"></EditText>
 
             <Button
                 android:id="@+id/done_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/layout_margin"
-                android:backgroundTint="@color/colorAccent"
-                android:text="@string/done"
-                android:fontFamily="@font/roboto"
-                />
+                android:layout_width="289dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="605dp"
+                android:background="@drawable/rectangle"
+                android:fontFamily="@font/avenir_roman"
+                android:text="@string/Done"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:backgroundTint="#5750A74E"></Button>
+        </RelativeLayout>
+    </RelativeLayout>
 
-        </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    </ScrollView>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ddLogoAcc"
+            android:layout_width="100dp"
+            android:layout_height="115dp"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="23dp"
+            android:src="@drawable/dd_new_logo"></com.google.android.material.imageview.ShapeableImageView>
 
-</LinearLayout>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/createAnAccount"
+        android:layout_marginLeft="50dp"
+        android:layout_width="135dp"
+        android:layout_height="111dp"
+        android:fontFamily="@font/avenir_roman"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.066"
+        android:text="@string/createAcc"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

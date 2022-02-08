@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.content.Intent
+import android.widget.ImageView
 import com.jjcc.dishdiscovery.R
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, UserSignActivity::class.java)
             startActivity(intent)
         }
+
     }
 
 }
