@@ -15,11 +15,48 @@
         android:id="@+id/nav_profile"
         android:name="com.jjcc.dishdiscovery.activities.ui.profile.ProfileFragment"
         android:label="@string/menu_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_nav_profile_to_dietFragment"
+            app:destination="@id/dietFragment" />
+        <action
+            android:id="@+id/action_nav_profile_to_allergyActivity"
+            app:destination="@id/allergyFragment" />
+        <action
+            android:id="@+id/action_nav_profile_to_cuisineFragment"
+            app:destination="@id/cuisineFragment" />
+        <action
+            android:id="@+id/action_nav_profile_to_passwordFragment"
+            app:destination="@id/passwordFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.jjcc.dishdiscovery.activities.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/dietFragment"
+        android:name="com.jjcc.dishdiscovery.activities.ui.diet.DietFragment"
+        android:label="Change Diet"
+        tools:layout="@layout/fragment_diet" />
+
+    <fragment
+        android:id="@+id/allergyFragment"
+        android:name="com.jjcc.dishdiscovery.activities.ui.allergy.AllergyFragment"
+        android:label="Change Allergy"
+        tools:layout="@layout/fragment_allergy" />
+
+    <fragment
+        android:id="@+id/cuisineFragment"
+        android:name="com.jjcc.dishdiscovery.activities.ui.cuisine.CuisineFragment"
+        android:label="Change Cuisine"
+        tools:layout="@layout/fragment_cuisine" />
+
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="com.jjcc.dishdiscovery.activities.ui.password.PasswordFragment"
+        android:label="Change Password"
+        tools:layout="@layout/fragment_password" />
 </navigation>

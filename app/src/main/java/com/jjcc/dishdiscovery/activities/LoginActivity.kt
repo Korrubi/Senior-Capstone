@@ -24,6 +24,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 import com.jjcc.dishdiscovery.R
+import org.w3c.dom.Text
 
 
 class LoginActivity : AppCompatActivity() {
@@ -33,9 +34,11 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         //Grab EditText Fields for Username and Password
-        val inputUsername = findViewById<EditText>(R.id.signInUsername)
-        val textInputLayout = findViewById<TextInputLayout>(R.id.signInPassword)
-        val inputPassword = textInputLayout.editText
+        val textInputLayoutUsername = findViewById<TextInputLayout>(R.id.signInUsername)
+        val inputUsername = textInputLayoutUsername.editText
+
+        val textInputLayoutPassword = findViewById<TextInputLayout>(R.id.signInPassword)
+        val inputPassword = textInputLayoutPassword.editText
 
 
         //Callback handler to authenticate User
@@ -126,7 +129,7 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onClick(v: View?) {
 
-                if(inputUsername.text.toString().isNullOrEmpty()){
+                if(inputUsername?.text.toString().isNullOrEmpty()){
                     val toast = Toast.makeText(this@LoginActivity, "Please enter Username", Toast.LENGTH_SHORT)
                     toast.setGravity(Gravity.CENTER, 0,0)
                     toast.show()
@@ -137,7 +140,7 @@ class LoginActivity : AppCompatActivity() {
                 val cognitoSettings: CognitoSettings = CognitoSettings(this@LoginActivity)
 
                 //Make CognitoUser object
-                val thisUser: CognitoUser = cognitoSettings.userPool.getUser(inputUsername.text.toString())
+                val thisUser: CognitoUser = cognitoSettings.userPool.getUser(inputUsername?.text.toString())
 
                 Log.i(TAG, "sign in button was clicked . . .")
 

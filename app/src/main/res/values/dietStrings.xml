@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="DietTitle">Diets</string>
+    <string name="DietTitle">Select Diets</string>
     <string name="halal">Halal</string>
     <string name="keto">Keto</string>
     <string name="kosher">Kosher</string>

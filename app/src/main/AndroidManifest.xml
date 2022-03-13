@@ -24,18 +24,6 @@
             android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.AllergyActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.DietActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.CuisineActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.PasswordActivity"
-            android:exported="false" />
-        <activity
             android:name=".activities.UserSignActivity"
             android:exported="false" />
         <activity

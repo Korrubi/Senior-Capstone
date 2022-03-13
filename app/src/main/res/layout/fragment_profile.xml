@@ -97,17 +97,19 @@
 
         <Button
             android:id="@+id/changePW"
-            android:onClick="passwordButton"
             android:layout_width="289dp"
             android:layout_height="48dp"
             android:layout_marginLeft="65dp"
             android:layout_marginTop="250dp"
             android:background="@drawable/rectangle"
             android:fontFamily="@font/avenir_roman"
+            android:onClick="passwordButton"
             android:text="@string/changePW"
             android:textAlignment="center"
             android:textColor="@color/black"
-            app:backgroundTint="#5750A74E"></Button>
+            app:backgroundTint="#5750A74E">
+
+        </Button>
 
         <Button
             android:id="@+id/changeDiet"
@@ -121,8 +123,8 @@
             android:text="@string/changeDietPref"
             android:textAlignment="center"
             android:textColor="@color/black"
-            app:backgroundTint="#5750A74E"></Button>
-
+            app:backgroundTint="#5750A74E">
+        </Button>
 
         <Button
             android:id="@+id/changeCuisine"
@@ -136,7 +138,9 @@
             android:text="@string/changeCuisinePref"
             android:textAlignment="center"
             android:textColor="@color/black"
-            app:backgroundTint="#5750A74E"></Button>
+            app:backgroundTint="#5750A74E">
+
+        </Button>
 
         <Button
             android:id="@+id/changeAllergy"
@@ -150,7 +154,9 @@
             android:text="@string/changeAllergyPref"
             android:textAlignment="center"
             android:textColor="@color/black"
-            app:backgroundTint="#5750A74E"></Button>
+            app:backgroundTint="#5750A74E">
+
+        </Button>
 
         <Button
             android:id="@+id/logout"
@@ -164,7 +170,9 @@
             android:text="@string/Logout"
             android:textAlignment="center"
             android:textColor="@color/black"
-            app:backgroundTint="#5750A74E"></Button>
+            app:backgroundTint="#5750A74E">
+
+        </Button>
 
     </RelativeLayout>
 

@@ -37,7 +37,8 @@ class UserSignActivity : AppCompatActivity() {
         val inputName = findViewById<EditText>(R.id.name_edit)
         val inputEmail = findViewById<EditText>(R.id.email_edit)
 
-        val inputPassword = findViewById<EditText>(R.id.create_pw_edit)
+        val textInputLayout = findViewById<TextInputLayout>(R.id.create_password)
+        val inputPassword = textInputLayout.editText
 
         val userAttributes = CognitoUserAttributes()
 
@@ -80,7 +81,7 @@ class UserSignActivity : AppCompatActivity() {
 
                 val cognitoSettings: CognitoSettings = CognitoSettings(this@UserSignActivity)
 //                cognitoSettings.userPool.signUpInBackground(inputUserName.text.toString(), inputPassword.text.toString(), userAttributes, null, signupCallback)
-                cognitoSettings.userPool.signUpInBackground(inputEmail.text.toString(), inputPassword.text.toString(), userAttributes, null, signupCallback)
+                cognitoSettings.userPool.signUpInBackground(inputEmail.text.toString(), inputPassword?.text.toString(), userAttributes, null, signupCallback)
             }
         })
 
