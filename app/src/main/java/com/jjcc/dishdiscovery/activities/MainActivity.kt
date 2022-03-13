@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         //w/o profile functionality
         val guestButton = findViewById<Button>(R.id.guest)
         guestButton.setOnClickListener{
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this, HomeActivity_New::class.java)
                 startActivity(intent)
         }
 

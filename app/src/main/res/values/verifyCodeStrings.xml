@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="verifyTitle">Verify Account</string>
+    <string name="enterVerifyCode">Enter Verification Code</string>
+    <string name="enterEmailUser">Enter Email Address</string>
+    <string name="verifyButtonConfirm">Verify</string>
+</resources>

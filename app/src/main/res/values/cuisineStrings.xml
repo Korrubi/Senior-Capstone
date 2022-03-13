@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="CuisineTitle">Cuisine</string>
-    <string name="Cuisine_1">American</string>
-    <string name="Cuisine_2">Chinese</string>
-    <string name="Cuisine_3">Asian</string>
-    <string name="Cuisine_4">Japanese</string>
-    <string name="Cuisine_5">Turkish</string>
-    <string name="Cuisine_6">Thai</string>
-    <string name="Cuisine_7">Italian</string>
-    <string name="Cuisine_8">Jamaican</string>
-    <string name="Cuisine_9">Indian</string>
+    <string name="CuisineTitle">Select Cuisine</string>
+    <string name="american">American</string>
+    <string name="chinese">Chinese</string>
+    <string name="korean">Korean</string>
+    <string name="japanese">Japanese</string>
+    <string name="turkish">Turkish</string>
+    <string name="thai">Thai</string>
+    <string name="italy">Italian</string>
+    <string name="jamaican">Jamaican</string>
+    <string name="indian">Indian</string>
     <string name="save_CuisinePref">Save Preferences</string>
 
 </resources>

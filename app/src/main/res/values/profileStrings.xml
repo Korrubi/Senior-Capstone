@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="myProfileTitle">My Account</string>
+    <string name="name">Name: </string>
+    <string name="email">Email: </string>
+    <string name="changePW">Change Password</string>
+    <string name="changeDietPref">Change Diet Preference</string>
+    <string name="changeAllergyPref">Change Allergy Preference</string>
+    <string name="changeCuisinePref">Change Cuisine Preference</string>
+    <string name="Logout">Log Out</string>
+
+</resources>

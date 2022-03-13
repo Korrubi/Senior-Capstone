@@ -5,23 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import com.jjcc.dishdiscovery.R
+import com.jjcc.dishdiscovery.activities.ui.profile.ProfileFragment
 
 class CuisineActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cuisine)
 
-        val cuisineBackButton = findViewById<ImageButton>(R.id.cuisineBackButton)
-        cuisineBackButton.setOnClickListener{
-            val intent = Intent(this, UserProfile::class.java)
-            startActivity(intent)
-        }
 
-        val cuisineForwardButton = findViewById<ImageButton>(R.id.cuisineForwardButton)
-        cuisineForwardButton.setOnClickListener{
-            val intent = Intent(this, AllergyActivity::class.java)
-            startActivity(intent)
-        }
 
     }
 }

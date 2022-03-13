@@ -17,10 +17,13 @@ import com.jjcc.dishdiscovery.R
 import java.lang.Exception
 import android.content.DialogInterface
 import android.content.Intent
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 class UserSignActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,15 +44,10 @@ class UserSignActivity : AppCompatActivity() {
 
         val signupCallback = object : SignUpHandler {
 
-            override fun onSuccess(
-                user: CognitoUser,
-                signUpConfirmationState: Boolean,
-                cognitoUserCodeDeliveryDetails: CognitoUserCodeDeliveryDetails
-            ) {
+            override fun onSuccess(user: CognitoUser, signUpConfirmationState: Boolean, cognitoUserCodeDeliveryDetails: CognitoUserCodeDeliveryDetails) {
                 Log.i(TAG, "sign up success...is confirmed: " + signUpConfirmationState)
 
                 //shows Creation Success Dialog Prompt (function below)
-
                 if (!signUpConfirmationState) {
                     Log.i(
                         TAG,
@@ -82,21 +80,14 @@ class UserSignActivity : AppCompatActivity() {
 
                 val cognitoSettings: CognitoSettings = CognitoSettings(this@UserSignActivity)
 //                cognitoSettings.userPool.signUpInBackground(inputUserName.text.toString(), inputPassword.text.toString(), userAttributes, null, signupCallback)
-                cognitoSettings.userPool.signUpInBackground(
-                    inputEmail.text.toString(),
-                    inputPassword.text.toString(),
-                    userAttributes,
-                    null,
-                    signupCallback
-                )
-
+                cognitoSettings.userPool.signUpInBackground(inputEmail.text.toString(), inputPassword.text.toString(), userAttributes, null, signupCallback)
             }
         })
 
     }
 
+    // Shows AlertDialog when signUp fails, uses regex to parse error msg to display
     fun signUpFail(errorMsg: String) {
-
 
         val pattern = Regex("^[^\\(]+")
 
@@ -107,14 +98,15 @@ class UserSignActivity : AppCompatActivity() {
             .setTitle(R.string.dialog_fail_title)
             .setMessage(output)
             .setPositiveButton(R.string.ok) { dialog, which ->
-                showMsg("Good boy, now try again")
+                showMsg("Check inputs and try again")
             }
-            .setNegativeButton(R.string.cancel) { dialog, which ->
-                showMsg("wtf sir")
-            }
+//            .setNegativeButton(R.string.cancel) { dialog, which ->
+//                showMsg("wtf sir")
+//            }
             .show()
     }
 
+    // Shows AlertDialog when signUp success, use regex to parse confirm msg
     fun confirmVerify(successMsg: String) {
 
         val pattern = Regex("^[^\\(]+")
@@ -128,13 +120,13 @@ class UserSignActivity : AppCompatActivity() {
             .setTitle(R.string.dialog_success_title)
             .setMessage("Verification Code sent to $output. Please verify to continue")
 //            .setMessage(R.string.dialog_success_message)
-            .setPositiveButton(R.string.ok) { dialog, which ->
+            .setPositiveButton(R.string.dialog_success_continue) { dialog, which ->
                 startActivity(intent)
-                showMsg("Good boy")
+//                showMsg("Good boy")
             }
-            .setNegativeButton(R.string.cancel) { dialog, which ->
-                showMsg("wtf sir")
-            }
+//            .setNegativeButton(R.string.cancel) { dialog, which ->
+//                showMsg("wtf sir")
+//            }
             .show()
     }
 

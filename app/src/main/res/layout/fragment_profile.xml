@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ui.profile.ProfileFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/name_rect"
+            android:layout_marginTop="0dp">
+
+        </com.google.android.material.imageview.ShapeableImageView>
+
+        <View
+            android:id="@+id/ellipse_1"
+            android:layout_width="661dp"
+            android:layout_height="350dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="-138dp"
+            android:layout_marginTop="-119dp"
+            android:background="@drawable/ellipse_1">
+        </View>
+
+        <View
+            android:id="@+id/name_rect"
+            android:layout_width="match_parent"
+            android:layout_height="156dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/account_name_rectangle"
+            android:elevation="4dp"
+            />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/nameAccount"
+            android:layout_width="300dp"
+            android:layout_height="111dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/avenir_roman"
+            android:text="@string/name"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/updatedUserName"
+            android:layout_width="300dp"
+            android:layout_height="111dp"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="69dp"
+            android:fontFamily="@font/avenir_roman"
+            android:textColor="#000000"
+            android:hint="Your Name"
+            android:textSize="22sp"
+            android:textStyle="normal">
+        </TextView>
+
+        <TextView
+            android:id="@+id/updatedEmail"
+            android:layout_width="300dp"
+            android:layout_height="111dp"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="129dp"
+            android:fontFamily="@font/avenir_roman"
+            android:hint="Your Email"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:textStyle="normal">
+        </TextView>
+
+        <TextView
+            android:id="@+id/emailAccount"
+            android:layout_width="300dp"
+            android:layout_height="111dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="120dp"
+            android:fontFamily="@font/avenir_roman"
+            android:text="@string/email"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/changePW"
+            android:onClick="passwordButton"
+            android:layout_width="289dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/rectangle"
+            android:fontFamily="@font/avenir_roman"
+            android:text="@string/changePW"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:backgroundTint="#5750A74E"></Button>
+
+        <Button
+            android:id="@+id/changeDiet"
+            android:onClick="dietButton"
+            android:layout_width="289dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="310dp"
+            android:background="@drawable/rectangle"
+            android:fontFamily="@font/avenir_roman"
+            android:text="@string/changeDietPref"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:backgroundTint="#5750A74E"></Button>
+
+
+        <Button
+            android:id="@+id/changeCuisine"
+            android:onClick="cuisineButton"
+            android:layout_width="289dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="370dp"
+            android:background="@drawable/rectangle"
+            android:fontFamily="@font/avenir_roman"
+            android:text="@string/changeCuisinePref"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:backgroundTint="#5750A74E"></Button>
+
+        <Button
+            android:id="@+id/changeAllergy"
+            android:onClick="allergyButton"
+            android:layout_width="289dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="430dp"
+            android:background="@drawable/rectangle"
+            android:fontFamily="@font/avenir_roman"
+            android:text="@string/changeAllergyPref"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:backgroundTint="#5750A74E"></Button>
+
+        <Button
+            android:id="@+id/logout"
+            android:onClick="logoutButton"
+            android:layout_width="289dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="490dp"
+            android:background="@drawable/rectangle"
+            android:fontFamily="@font/avenir_roman"
+            android:text="@string/Logout"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:backgroundTint="#5750A74E"></Button>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -55,8 +55,8 @@
 
         <EditText
             android:id="@+id/signInUsername"
-            android:layout_width="292dp"
-            android:layout_height="55dp"
+            android:layout_width="300dp"
+            android:layout_height="56dp"
             android:layout_marginLeft="65dp"
             android:layout_marginTop="425dp"
             android:background="@drawable/rectangle"
@@ -64,33 +64,72 @@
             android:fontFamily="@font/avenir_roman"
             android:hint="@string/un"
             android:textAlignment="center"
-            android:textColor="@color/black"></EditText>
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="18dp"></EditText>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signInPassword"
-            android:layout_width="292dp"
-            android:layout_height="55dp"
-            android:layout_marginLeft="65dp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="9dp"
             android:layout_marginTop="500dp"
-            android:background="@drawable/rectangle"
-            android:backgroundTint="@color/perfectgreen"
-            android:fontFamily="@font/avenir_roman"
-            android:hint="@string/pw"
-            android:inputType="textPassword"
-            android:maxLength="100"
-            android:textAlignment="center"
-            android:textColor="@color/black"></EditText>
+            app:boxStrokeColor="@color/Black"
+            app:boxStrokeWidth="0px"
+            app:boxStrokeWidthFocused="0px"
+            android:textColorHint="#808080"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.15"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="302dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="56dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rectangle"
+                android:backgroundTint="@color/perfectgreen"
+                android:drawablePadding="-30dp"
+                android:fontFamily="@font/avenir_roman"
+                android:textSize="17dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:hint="@string/pw"
+                android:inputType="textPassword"
+                android:maxLength="100"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signInUsername" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!--                <EditText-->
+        <!--                    android:id="@+id/signInPassword"-->
+        <!--                    android:layout_width="292dp"-->
+        <!--                    android:layout_height="55dp"-->
+        <!--                    android:layout_marginLeft="65dp"-->
+        <!--                    android:layout_marginTop="500dp"-->
+        <!--                    android:background="@drawable/rectangle"-->
+        <!--                    android:backgroundTint="@color/perfectgreen"-->
+        <!--                    android:fontFamily="@font/avenir_roman"-->
+        <!--                    android:hint="@string/pw"-->
+        <!--                    android:inputType="textPassword"-->
+        <!--                    android:maxLength="100"-->
+        <!--                    android:textAlignment="center"-->
+        <!--                    android:textColor="@color/black"></EditText>-->
 
         <Button
             android:id="@+id/signInButton"
-            android:layout_width="292dp"
-            android:layout_height="55dp"
+            android:layout_width="300dp"
+            android:layout_height="56dp"
             android:layout_marginLeft="65dp"
             android:layout_marginTop="575dp"
             android:background="@drawable/rectangle"
             android:fontFamily="@font/avenir_roman"
             android:text="@string/sn"
             android:textAlignment="center"
+            android:textStyle="bold"
             android:textColor="@color/black"
             app:backgroundTint="#5750A74E"></Button>
     </RelativeLayout>

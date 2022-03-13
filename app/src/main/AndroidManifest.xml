@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jjcc.dishdiscovery">
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,37 +13,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginDD">
         <activity
-            android:name="com.jjcc.dishdiscovery.activities.UserVerifyActivity"
+            android:name=".activities.HomeActivity_New"
+            android:exported="false"
+            android:label="@string/title_activity_home_new"
+            android:theme="@style/Theme.LoginDD.NoActionBar" />
+        <activity
+            android:name=".activities.UserVerifyActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.activities.LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.activities.AllergyActivity"
+            android:name=".activities.AllergyActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.activities.DietActivity"
+            android:name=".activities.DietActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.activities.CuisineActivity"
+            android:name=".activities.CuisineActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.activities.UserProfile"
+            android:name=".activities.PasswordActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.activities.PasswordActivity"
+            android:name=".activities.UserSignActivity"
             android:exported="false" />
         <activity
-            android:name="com.jjcc.dishdiscovery.activities.EmailActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.jjcc.dishdiscovery.activities.UserSignActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.jjcc.dishdiscovery.activities.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.jjcc.dishdiscovery.activities.MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="verify_code">Enter Verification Code</string>
-    <string name="dialog_success_message">Verification Code sent to email. Please Verify to continue</string>
     <string name="dialog_success_title">Account Created Successfully</string>
-    <string name="ok">OkayChamp</string>
-    <string name="cancel">FeelsBadMan</string>
-    <string name="dialog_fail_message">Check the fields input pepega</string>
+    <string name="dialog_success_message">Verification Code sent to email. Please Verify to continue.</string>
+    <string name="dialog_success_continue">Continue</string>
     <string name="dialog_fail_title">Account Creation Failed</string>
+    <string name="ok">Got it</string>
+    <string name="cancel">FeelsBadMan</string>
+    <string name="verify_success_title">Account Verified Successfully</string>
+    <string name="verify_success_message">Verification success, you can now login!</string>
+    <string name="verify_success_continue">Lets Go!</string>
+    <string name="verify_fail_title">Account Verification Failed</string>
+    <string name="verify_fail_message"></string>
 </resources>

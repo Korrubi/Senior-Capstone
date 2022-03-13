@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ui.home.HomeFragment">
+
+    <ScrollView
+        android:id="@+id/HomeScroll"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context="com.lobothijau.carouselsederhana.MainActivity"
+            tools:showIn="@layout/activity_main">
+
+            <com.synnapps.carouselview.CarouselView
+                android:id="@+id/carouselView1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:fillColor="#FFFFFFFF"
+                app:pageColor="#00000000"
+                app:radius="6dp"
+                app:slideInterval="3000"
+                app:strokeColor="#FF777777"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/japanese"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_below="@+id/carouselView1"
+                android:layout_marginLeft="150dp"
+                android:backgroundTint="@color/DarkGreen"
+                android:text="Japanese">
+            </Button>
+
+            <Button
+                android:id="@+id/thai"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/japanese"
+                android:layout_marginLeft="150dp"
+                android:backgroundTint="@color/DarkGreen"
+                android:text="Thai">
+            </Button>
+
+            <Button
+                android:id="@+id/chinese"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/thai"
+                android:layout_marginLeft="150dp"
+                android:backgroundTint="@color/DarkGreen"
+                android:text="Chinese">
+            </Button>
+
+            <Button
+                android:id="@+id/turkish"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/chinese"
+                android:layout_marginLeft="150dp"
+                android:backgroundTint="@color/DarkGreen"
+                android:text="turkish">
+            </Button>
+
+            <Button
+                android:id="@+id/american"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/turkish"
+                android:layout_marginLeft="150dp"
+                android:backgroundTint="@color/DarkGreen"
+                android:text="American">
+            </Button>
+
+            <Button
+                android:id="@+id/mexican"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/american"
+                android:layout_marginLeft="150dp"
+                android:backgroundTint="@color/DarkGreen"
+                android:text="Mexican">
+            </Button>
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,7 @@ import aws.sdk.kotlin.services.dynamodb.DynamoDbClient
 import kotlinx.coroutines.runBlocking
 import android.view.View
 import android.widget.*
+import com.jjcc.dishdiscovery.activities.ui.profile.ProfileFragment
 import java.util.*
 
 class AllergyActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class AllergyActivity : AppCompatActivity() {
 
         val allergyBackButton = findViewById<ImageButton>(R.id.allergyBackButton)
         allergyBackButton.setOnClickListener{
-            val intent = Intent(this, UserProfile::class.java)
+            val intent = Intent(this, ProfileFragment::class.java)
             startActivity(intent)
         }
     }
@@ -49,7 +50,7 @@ class AllergyActivity : AppCompatActivity() {
 
         // Set values to save in the Amazon DynamoDB table.
         val uuid: UUID = UUID.randomUUID()
-        val tableName = "Android"
+        val tableName = "Allergy"
         val key = "id"
         val keyVal = uuid.toString()
 
