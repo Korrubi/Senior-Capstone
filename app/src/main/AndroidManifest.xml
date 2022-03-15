@@ -13,10 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginDD">
         <activity
-            android:name=".activities.HomeActivity_New"
+            android:name=".activities.HomeActivity"
             android:exported="false"
             android:label="@string/title_activity_home_new"
             android:theme="@style/Theme.LoginDD.NoActionBar" />
+        <activity
+            android:name=".activities.spoonacular.Spoonacular"
+            android:exported="false" />
         <activity
             android:name=".activities.UserVerifyActivity"
             android:exported="false" />

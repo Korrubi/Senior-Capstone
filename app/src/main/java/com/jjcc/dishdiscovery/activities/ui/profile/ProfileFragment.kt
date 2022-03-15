@@ -66,23 +66,20 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             root.findNavController().navigate(action)
         }
 
-        //Load intent (PROPS) from previous Activity
-        val intent = activity?.intent;
-        val accessToken:String = intent?.getStringExtra("Access Token").toString()
-
-        //Sanity check if token matches from before..
-        Log.i(ContentValues.TAG, "Access Token in UserProfile: $accessToken")
-
         //Grab currentUser's Name and Email passed from Intent (PROPS)
+        val intent = activity?.intent;
         var userName = intent?.getStringExtra("User Name").toString()
         var userEmail = intent?.getStringExtra("User Email").toString()
+
+//        val bundle = this.arguments
+//        var userName = bundle?.getString("user name").toString()
+//        var userEmail = bundle?.getString("user email").toString()
 
         var userNameText = root.findViewById<TextView>(R.id.updatedUserName)
         userNameText.setText(userName)
 
         var emailText = root.findViewById<TextView>(R.id.updatedEmail)
         emailText.setText(userEmail)
-
 
         //Grab current user to enable logout button
         val cognitoSettings: CognitoSettings = CognitoSettings(activity)

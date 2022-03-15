@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/drawable/ic_like.xml" value="0.482" />
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/drawable/ic_servings.xml" value="0.482" />
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/drawable/ic_time.xml" value="0.482" />
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/drawable/icon_favorite.xml" value="0.5475" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_allergy.xml" value="0.34010416666666665" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_change_email.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_change_password.xml" value="0.5541666666666667" />
@@ -10,11 +14,12 @@
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_diet.xml" value="0.33" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_home.xml" value="0.31354166666666666" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_home_new.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_login.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_main.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_login.xml" value="0.5" />
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_user_profile.xml" value="0.5126811594202898" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_user_sign.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/app_bar_home_activity_new.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/activity_user_verify.xml" value="0.5" />
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/app_bar_home_activity_new.xml" value="0.33" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/content_home_activity_new.xml" value="0.34010416666666665" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/content_profile.xml" value="0.33" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/diet_fragment.xml" value="0.5541666666666667" />
@@ -23,13 +28,17 @@
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/fragment_diet.xml" value="0.33" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/fragment_login.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/fragment_meal.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/fragment_password.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/fragment_search.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/fragment_slideshow.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/list_random_recipe.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/nav_header_home_activity_new.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/layout/spoonacular.xml" value="0.33" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/menu/activity_main_drawer.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/menu/home_activity__new.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/menu/options_menu.xml" value="0.5541666666666667" />
       </map>
     </option>
   </component>

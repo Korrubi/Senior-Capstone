@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mealName">Classic 8oz Burger</string>
+    <string name="FavoriteThisDish">Favorite This Dish!</string>
+    <string name="RateThisDish">Rate This Dish!</string>
+    <string name="ViewNearestOptions">View Nearest Options</string>
+    <string name="ViewRecipes">View Recipes</string>
+    <string name="Share">Share!</string>
+</resources>

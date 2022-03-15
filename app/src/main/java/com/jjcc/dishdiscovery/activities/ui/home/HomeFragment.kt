@@ -1,21 +1,33 @@
 package com.jjcc.dishdiscovery.activities.ui.home
 
+import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.jjcc.dishdiscovery.R
+import com.jjcc.dishdiscovery.activities.spoonacular.RequestManager
+import com.jjcc.dishdiscovery.activities.spoonacular.Spoonacular
+import com.jjcc.dishdiscovery.activities.spoonacular.adapters.RandomRecipeAdapter
 import com.jjcc.dishdiscovery.databinding.FragmentHomeBinding
 import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageClickListener
 import com.synnapps.carouselview.ImageListener
 
 class HomeFragment : Fragment() {
+
+    var dialog: ProgressDialog? = null
+    var manager: RequestManager? = null
+    var randomRecipeAdapter: RandomRecipeAdapter? = null
+    var recyclerView: RecyclerView? = null
 
     var sampleImages = intArrayOf(
         R.drawable.carousel_1,
@@ -52,11 +64,11 @@ class HomeFragment : Fragment() {
         carouselView.setImageListener(imageListener);
 
         carouselView.setImageClickListener(ImageClickListener { position ->
-            Toast.makeText(
-                activity,
-                "Clicked item: $position",
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast.makeText(activity, "Clicked item: $position", Toast.LENGTH_SHORT).show()
+            if(carouselView.currentItem == 3){
+                val action = HomeFragmentDirections.actionNavHomeToMealFragment()
+                root.findNavController().navigate(action)
+            }
         })
 
         return root

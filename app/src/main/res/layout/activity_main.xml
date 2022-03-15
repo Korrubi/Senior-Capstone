@@ -7,11 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <View
         android:id="@+id/titleScreenBackground"
@@ -19,7 +17,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/home_page_skillet"/>
-
 
         <View
             android:id="@+id/rectangle_1"
@@ -34,13 +31,11 @@
             android:layout_height="match_parent"
             android:background="@drawable/linear_gradient_grey" />
 
-
     </FrameLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ddLogoAcc"
@@ -99,7 +94,8 @@
             android:text="@string/login"
             android:textAlignment="center"
             android:textColor="@color/black"
-            app:backgroundTint="#D9F3ECDA"></Button>
+            app:backgroundTint="#D9F3ECDA">
+        </Button>
 
         <Button
             android:id="@+id/createAcc"
@@ -112,8 +108,8 @@
             android:text="@string/createAccStart"
             android:textAlignment="center"
             android:textColor="@color/black"
-            app:backgroundTint="#D9F3ECDA"></Button>
-
+            app:backgroundTint="#D9F3ECDA">
+        </Button>
 
         <Button
             android:id="@+id/guest"
@@ -126,6 +122,7 @@
             android:text="@string/guest"
             android:textAlignment="center"
             android:textColor="@color/black"
-            app:backgroundTint="#D9F3ECDA"></Button>
+            app:backgroundTint="#D9F3ECDA">
+        </Button>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,8 +4,6 @@ import android.content.Context;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
 
-
-
 public class CognitoSettings {
     private String userPoolID = "us-west-2_WN61x5obI";
     private String clientID = "67a97t873k88ssooo2fs8ae3hs";

@@ -6,27 +6,36 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.widget.Button
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserDetails
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetailsHandler
+import com.google.android.material.navigation.NavigationView
 import com.jjcc.dishdiscovery.R
-import com.jjcc.dishdiscovery.activities.ui.profile.ProfileFragment
+import com.jjcc.dishdiscovery.activities.spoonacular.Spoonacular
 import com.jjcc.dishdiscovery.databinding.ActivityHomeNewBinding
-import java.lang.Exception
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
-class HomeActivity_New : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityHomeNewBinding
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navView: NavigationView
+
+    //Initialize name and email of a given user
+    var userName = ""
+    var userEmail = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +45,9 @@ class HomeActivity_New : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarHomeActivityNew.toolbar)
 
-        val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
+        drawerLayout = binding.drawerLayout
+        navView = binding.navView
+
         val navController = findNavController(R.id.nav_host_fragment_content_home_activity_new)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -49,12 +59,8 @@ class HomeActivity_New : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        //Initialize name and email of a given user
-        var userName = ""
-        var userEmail = ""
-
         //Make cognitoSettings and CognitoUser object to grab info using tokens
-        val cognitoSettings: CognitoSettings = CognitoSettings(this@HomeActivity_New)
+        val cognitoSettings: CognitoSettings = CognitoSettings(this@HomeActivity)
         val thisUser : CognitoUser = cognitoSettings.userPool.currentUser
 
         //callback Handler to perform getAttributes() call from cognitoUser
@@ -75,24 +81,25 @@ class HomeActivity_New : AppCompatActivity() {
             }
         }
 
-        //use CognitoUser thisUser to call getDetailsInBackground to retrieve information
-        thisUser.getDetailsInBackground(detailsHandler)
+        CoroutineScope(IO).launch {
+            val result = async { thisUser.getDetailsInBackground(detailsHandler)}.await()
 
-        //links up profile from home
-        //pass 3 intent string field
-//        val profileButton = findViewById<Button>(R.id.nav_profile)
-//        profileButton.setOnClickListener{
-//            val intent = Intent(this, ProfileFragment::class.java)
-//            intent.putExtra("Access Token", accessToken)
-//            intent.putExtra("User Name", userName)
-//            intent.putExtra("User Email", userEmail)
-//            startActivity(intent)
-//        }
+            delay(1000)
+            intent.putExtra("User Name", userName)
+            intent.putExtra("User Email", userEmail)
+        }
+
+        val thaiButton = findViewById<Button>(R.id.thai)
+        thaiButton.setOnClickListener {
+            var intent = Intent (this, Spoonacular::class.java)
+            intent.putExtra("cuisine", "thai")
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.home_activity__new, menu)
+        menuInflater.inflate(R.menu.options_menu, menu)
         return true
     }
 

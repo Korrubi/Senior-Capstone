@@ -5,11 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoDevice
@@ -24,8 +21,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 import com.jjcc.dishdiscovery.R
-import org.w3c.dom.Text
-
 
 class LoginActivity : AppCompatActivity() {
 
@@ -66,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this@LoginActivity, "Login success. Redirecting..", Toast.LENGTH_SHORT).show()
 
                 //Pass tokens through intent to next Activity
-                val intent = Intent(this@LoginActivity, HomeActivity_New::class.java)
+                val intent = Intent(this@LoginActivity, HomeActivity::class.java)
 
 //                intent.putExtra("Access Token", accessToken)
 //                intent.putExtra("Username", usernameToken)

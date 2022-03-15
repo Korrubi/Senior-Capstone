@@ -40,7 +40,6 @@ class UserVerifyActivity : AppCompatActivity(){
                     doInBackground(verifyCode.text.toString(), verifyEmail.text.toString())
                 }.await()
 
-
                 if (task1.contains("Succeeded")) {
                     println("Debug: Task 1 is done: $task1")
 
@@ -62,7 +61,6 @@ class UserVerifyActivity : AppCompatActivity(){
         val confirmationCallback = object : GenericHandler {
             override fun onSuccess() {
                 result[0] = "Succeeded!"
-
             }
             override fun onFailure(exception: Exception) {
                 result[0] = "Failed " + exception.message
