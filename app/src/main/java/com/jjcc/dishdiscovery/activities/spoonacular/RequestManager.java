@@ -1,8 +1,6 @@
 package com.jjcc.dishdiscovery.activities.spoonacular;
 
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 
 import com.jjcc.dishdiscovery.R;
 import com.jjcc.dishdiscovery.activities.spoonacular.listeners.RandomRecipeResponseListener;
@@ -18,7 +16,6 @@ import retrofit2.http.Query;
 
 public class RequestManager {
     Context context;
-    Intent intent;
     Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.spoonacular.com/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -28,10 +25,8 @@ public class RequestManager {
         this.context = context;
     }
 
-    public void getRandomRecipes(RandomRecipeResponseListener listener) {
+    public void getRandomRecipes(RandomRecipeResponseListener listener, String cuisine) {
         CallRandomRecipes callRandomRecipes = retrofit.create(CallRandomRecipes.class);
-        String cuisine = intent.getStringExtra("cuisine");
-        Log.i("tag","" + cuisine);
         Call<RandomRecipeApiResponse> call = callRandomRecipes.callRandomRecipe(context.getString(R.string.api_key), "10", "" + cuisine);
         call.enqueue(new Callback<RandomRecipeApiResponse>() {
             @Override

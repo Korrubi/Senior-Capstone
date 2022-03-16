@@ -95,6 +95,13 @@ class HomeActivity : AppCompatActivity() {
             intent.putExtra("cuisine", "thai")
             startActivity(intent)
         }
+
+        val chineseButton = findViewById<Button>(R.id.chinese)
+        chineseButton.setOnClickListener {
+            var intent = Intent (this, Spoonacular::class.java)
+            intent.putExtra("cuisine", "chinese")
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

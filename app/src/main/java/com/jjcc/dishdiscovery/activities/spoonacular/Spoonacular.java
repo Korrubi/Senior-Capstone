@@ -2,6 +2,7 @@ package com.jjcc.dishdiscovery.activities.spoonacular;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,8 +27,13 @@ public class Spoonacular extends AppCompatActivity {
         dialog = new ProgressDialog(this);
         dialog.setTitle("Loading...");
 
+        //Just grab the string using key
+        String cuisine = getIntent().getStringExtra("cuisine");
+
+        //Sanity check for passed in cuisine name
+        Log.i("TAG Name", "I'm Spoonacular.java: " + cuisine );
         manager = new RequestManager(this);
-        manager.getRandomRecipes(randomRecipeResponselistener);
+        manager.getRandomRecipes(randomRecipeResponselistener, cuisine);
         dialog.show();
     }
 

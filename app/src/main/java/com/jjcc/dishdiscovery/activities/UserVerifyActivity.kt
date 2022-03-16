@@ -16,8 +16,6 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import java.lang.Exception
-import kotlin.coroutines.suspendCoroutine
-
 
 class UserVerifyActivity : AppCompatActivity(){
 
@@ -51,7 +49,6 @@ class UserVerifyActivity : AppCompatActivity(){
                 }
 //                doInBackground(verifyCode.text.toString(), verifyEmail.text.toString())
             }
-
         }
     }
 
@@ -92,7 +89,6 @@ class UserVerifyActivity : AppCompatActivity(){
                 }
                 .show()
         }
-
     }
 
     private suspend fun verifyFail(errorMsg: String) {
@@ -110,7 +106,5 @@ class UserVerifyActivity : AppCompatActivity(){
                 }
                 .show()
         }
-
     }
-
 }

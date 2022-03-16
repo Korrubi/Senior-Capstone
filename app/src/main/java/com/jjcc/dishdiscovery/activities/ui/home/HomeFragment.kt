@@ -1,34 +1,21 @@
 package com.jjcc.dishdiscovery.activities.ui.home
 
-import android.app.ProgressDialog
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import com.jjcc.dishdiscovery.R
-import com.jjcc.dishdiscovery.activities.spoonacular.RequestManager
-import com.jjcc.dishdiscovery.activities.spoonacular.Spoonacular
-import com.jjcc.dishdiscovery.activities.spoonacular.adapters.RandomRecipeAdapter
 import com.jjcc.dishdiscovery.databinding.FragmentHomeBinding
 import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageClickListener
 import com.synnapps.carouselview.ImageListener
 
 class HomeFragment : Fragment() {
-
-    var dialog: ProgressDialog? = null
-    var manager: RequestManager? = null
-    var randomRecipeAdapter: RandomRecipeAdapter? = null
-    var recyclerView: RecyclerView? = null
-
     var sampleImages = intArrayOf(
         R.drawable.carousel_1,
         R.drawable.carousel_2,
@@ -48,8 +35,8 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+//        val homeViewModel =
+//            ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root

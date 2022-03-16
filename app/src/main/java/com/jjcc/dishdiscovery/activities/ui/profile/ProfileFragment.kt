@@ -31,8 +31,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val galleryViewModel =
-            ViewModelProvider(this).get(ProfileViewModel::class.java)
+//        val galleryViewModel =
+//            ViewModelProvider(this).get(ProfileViewModel::class.java)
 
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -70,10 +70,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         val intent = activity?.intent;
         var userName = intent?.getStringExtra("User Name").toString()
         var userEmail = intent?.getStringExtra("User Email").toString()
-
-//        val bundle = this.arguments
-//        var userName = bundle?.getString("user name").toString()
-//        var userEmail = bundle?.getString("user email").toString()
 
         var userNameText = root.findViewById<TextView>(R.id.updatedUserName)
         userNameText.setText(userName)

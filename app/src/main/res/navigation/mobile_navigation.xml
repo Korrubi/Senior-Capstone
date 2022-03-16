@@ -66,6 +66,6 @@
     <fragment
         android:id="@+id/mealFragment"
         android:name="com.jjcc.dishdiscovery.activities.ui.meal.MealFragment"
-        android:label="fragment_meal"
+        android:label="Meal"
         tools:layout="@layout/fragment_meal" />
 </navigation>
