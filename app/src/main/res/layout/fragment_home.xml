@@ -10,14 +10,16 @@
         android:id="@+id/HomeScroll"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        android:layout_marginBottom="55dp"
+        app:layout_constraintBottom_toTopOf="@id/recommend_me"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="656dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintLeft_toLeftOf="parent"
             tools:context="com.lobothijau.carouselsederhana.MainActivity"
             tools:showIn="@layout/activity_main">
 
@@ -32,65 +34,283 @@
                 app:strokeColor="#FF777777"
                 app:strokeWidth="1dp" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/japanese"
-                android:layout_width="120dp"
-                android:layout_height="80dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:layout_below="@+id/carouselView1"
-                android:layout_marginLeft="150dp"
-                android:backgroundTint="@color/DarkGreen"
-                android:text="Japanese">
-            </Button>
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/food_japanese"></ImageButton>
 
-            <Button
+            <ImageButton
                 android:id="@+id/thai"
-                android:layout_width="120dp"
-                android:layout_height="80dp"
-                android:layout_below="@id/japanese"
-                android:layout_marginLeft="150dp"
-                android:backgroundTint="@color/DarkGreen"
-                android:text="Thai">
-            </Button>
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@+id/carouselView1"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/japanese"
+                android:background="@drawable/food_thai"></ImageButton>
 
-            <Button
+            <ImageButton
                 android:id="@+id/chinese"
-                android:layout_width="120dp"
-                android:layout_height="80dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/japanese"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/food_chinese"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/greek"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:layout_below="@id/thai"
-                android:layout_marginLeft="150dp"
-                android:backgroundTint="@color/DarkGreen"
-                android:text="Chinese">
-            </Button>
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/chinese"
+                android:background="@drawable/food_greek"></ImageButton>
 
-            <Button
-                android:id="@+id/turkish"
-                android:layout_width="120dp"
-                android:layout_height="80dp"
-                android:layout_below="@id/chinese"
-                android:layout_marginLeft="150dp"
-                android:backgroundTint="@color/DarkGreen"
-                android:text="turkish">
-            </Button>
-
-            <Button
+            <ImageButton
                 android:id="@+id/american"
-                android:layout_width="120dp"
-                android:layout_height="80dp"
-                android:layout_below="@id/turkish"
-                android:layout_marginLeft="150dp"
-                android:backgroundTint="@color/DarkGreen"
-                android:text="American">
-            </Button>
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/chinese"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/food_american"></ImageButton>
 
-            <Button
+            <ImageButton
                 android:id="@+id/mexican"
-                android:layout_width="120dp"
-                android:layout_height="80dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/greek"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/american"
+                android:background="@drawable/food_mexican"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/korean"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:layout_below="@id/american"
-                android:layout_marginLeft="150dp"
-                android:backgroundTint="@color/DarkGreen"
-                android:text="Mexican">
-            </Button>
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/food_korean"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/vietnamese"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/mexican"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/korean"
+                android:background="@drawable/food_viet"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/african"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/vietnamese"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/food_african"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/british"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/vietnamese"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/african"
+                android:background="@drawable/food_british"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/cajun"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/african"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/food_cajun"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/caribbean"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/british"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/cajun"
+                android:background="@drawable/food_caribbean"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/european"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/cajun"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/food_european"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/french"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/caribbean"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/european"
+                android:background="@drawable/food_french"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/german"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/european"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/food_german"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/indian"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/french"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/german"
+                android:background="@drawable/food_indian"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/irish"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/german"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/food_irish"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/italian"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/indian"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/irish"
+                android:background="@drawable/food_italian"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/jewish"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/irish"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/food_jewish"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/latin"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/italian"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/jewish"
+                android:background="@drawable/food_latin"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/mediterranean"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/jewish"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/food_mediterranean"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/middle_east"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/latin"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/mediterranean"
+                android:background="@drawable/food_middle_east"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/nordic"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/mediterranean"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/food_nordic"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/southern"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/middle_east"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/nordic"
+                android:background="@drawable/food_southern"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/spanish"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/nordic"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/food_spanish"></ImageButton>
+
+            <ImageButton
+                android:id="@+id/east_european"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@id/southern"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@id/spanish"
+                android:background="@drawable/food_east_european"></ImageButton>
         </RelativeLayout>
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/recommend_me"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@id/HomeScroll"
+        android:background="@drawable/food_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/HomeScroll"></ImageButton>
 </androidx.constraintlayout.widget.ConstraintLayout>

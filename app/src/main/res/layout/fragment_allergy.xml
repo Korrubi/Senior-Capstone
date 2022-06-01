@@ -23,9 +23,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="-138dp"
                 android:layout_marginTop="-119dp"
-                android:background="@drawable/ellipse_1">
-
-            </View>
+                android:background="@drawable/ellipse_1"></View>
 
             <View
                 android:id="@+id/rectangle_3"
@@ -33,124 +31,6 @@
                 android:layout_height="400dp"
                 android:layout_marginTop="155dp"
                 android:background="@drawable/rect_round" />
-        </FrameLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <View
-                android:id="@+id/fishCircle"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="545dp"
-                android:background="@drawable/ellipse_allergy"
-                />
-            <View
-                android:id="@+id/shellFishCircle"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="377dp"
-                android:background="@drawable/ellipse_allergy"
-                />
-
-            <View
-                android:id="@+id/soyCircle"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="490dp"
-                android:background="@drawable/ellipse_allergy"
-                />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/peanuts"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="168dp"
-                android:src="@drawable/peanuts">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/treeNut"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="218dp"
-                android:src="@drawable/treenut">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/dairy"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="270dp"
-                android:src="@drawable/icecream">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/egg"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="325dp"
-                android:src="@drawable/egg">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/shellfishEmoji"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="377dp"
-                android:src="@drawable/shrimp">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/wheat"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="430dp"
-                android:src="@drawable/wheat">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/soyEmoji"
-                android:layout_width="52dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="490dp"
-                android:src="@drawable/shoyu">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/fishEmoji"
-                android:layout_width="52dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="245dp"
-                android:layout_marginTop="545dp"
-                android:src="@drawable/fish_emoji">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ddLogoAcc"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="270dp"
-                android:layout_marginTop="68dp"
-                android:src="@drawable/dd_new_logo">
-            </com.google.android.material.imageview.ShapeableImageView>
 
             <TextView
                 android:id="@+id/description"
@@ -164,116 +44,301 @@
                 android:textSize="22sp"
                 android:textStyle="normal" />
 
-            <Button
-                android:id="@+id/save_allergy"
-                android:layout_width="289dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="605dp"
-                android:background="@drawable/rectangle"
-                android:fontFamily="@font/avenir_roman"
-                android:onClick="submitData"
-                android:text="@string/Done"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                app:backgroundTint="#5750A74E"></Button>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ddLogoAcc"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="270dp"
+                android:layout_marginTop="68dp"
+                android:src="@drawable/dd_new_logo"></com.google.android.material.imageview.ShapeableImageView>
+        </FrameLayout>
 
-        </RelativeLayout>
-        <RelativeLayout
+        <ScrollView
+            android:id="@+id/allergyScroll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="154dp">
 
-            <LinearLayout
-                android:id="@+id/linearLayout"
+            <RelativeLayout
+                android:id="@+id/allergyScrollChild"
                 android:layout_width="match_parent"
-                android:layout_height="600dp"
-                android:layout_marginLeft="85dp"
-                android:layout_marginTop="160dp"
-                android:gravity="left"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/shellFishCircle"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/egg"
+                    android:layout_marginLeft="72dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/shellfishCheck"
+                    android:background="@drawable/ellipse_allergy" />
+
+                <View
+                    android:id="@+id/soyCircle"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/wheat"
+                    android:layout_marginLeft="130dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/soyCheck"
+                    android:background="@drawable/ellipse_allergy" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/peanuts"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/peanutCheck"
+                    android:src="@drawable/allergy_peanuts"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/treeNut"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/peanuts"
+                    android:layout_marginLeft="57dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/treenutsCheck"
+                    android:src="@drawable/allergy_treenut"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/dairy"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/treeNut"
+                    android:layout_marginLeft="112dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/dairyCheck"
+                    android:src="@drawable/allergy_dairy"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/egg"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/dairy"
+                    android:layout_marginLeft="114dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/eggsCheck"
+                    android:src="@drawable/allergy_egg"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/shellfishEmoji"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/egg"
+                    android:layout_marginLeft="72dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/shellfishCheck"
+                    android:src="@drawable/allergy_shellfish"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/wheat"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/shellfishEmoji"
+                    android:layout_marginLeft="97dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/wheatCheck"
+                    android:src="@drawable/allergy_wheat"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/soyEmoji"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/wheat"
+                    android:layout_marginLeft="130dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/soyCheck"
+                    android:src="@drawable/allergy_soy"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/grainEmoji"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/soyEmoji"
+                    android:layout_marginLeft="112dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/grainCheck"
+                    android:src="@drawable/allergy_grain"></com.google.android.material.imageview.ShapeableImageView>
+
+                <View
+                    android:id="@+id/glutenEmoji"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/grainEmoji"
+                    android:layout_marginLeft="97dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/glutenCheck"
+                    android:background="@drawable/allergy_gluten" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/seafoodEmoji"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/glutenEmoji"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/seafoodCheck"
+                    android:src="@drawable/allergy_seafood"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/sesameEmoji"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/seafoodEmoji"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/sesameCheck"
+                    android:src="@drawable/allergy_sesame"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/sulfiteEmoji"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/sesameEmoji"
+                    android:layout_marginLeft="102dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/sulfiteCheck"
+                    android:src="@drawable/allergy_sulfite"></com.google.android.material.imageview.ShapeableImageView>
 
                 <CheckBox
                     android:id="@+id/peanutCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/Allergy_1"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8"
-                    tools:layout_editor_absoluteX="144dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
                     android:id="@+id/treenutsCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/peanutCheck"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/Allergy_5"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView12"
-                    tools:layout_editor_absoluteX="132dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
                     android:id="@+id/dairyCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/treenutsCheck"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/Allergy_2"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6"
-                    tools:layout_editor_absoluteX="173dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
                     android:id="@+id/eggsCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/dairyCheck"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/Allergy_4"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView11"
-                    tools:layout_editor_absoluteX="168dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
                     android:id="@+id/shellfishCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/eggsCheck"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/Allergy_3"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9"
-                    tools:layout_editor_absoluteX="141dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
                     android:id="@+id/wheatCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/shellfishCheck"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/Allergy_6"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2"
-                    tools:layout_editor_absoluteX="157dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
                     android:id="@+id/soyCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/wheatCheck"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/Allergy_7"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5"
-                    tools:layout_editor_absoluteX="177dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
-                    android:id="@+id/fishCheck"
+                    android:id="@+id/grainCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/soyCheck"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Allergy_9"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/glutenCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/grainCheck"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/Allergy_8"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3"
-                    tools:layout_editor_absoluteX="174dp" />
-            </LinearLayout>
-        </RelativeLayout>
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/seafoodCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/glutenCheck"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Allergy_10"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/sesameCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/seafoodCheck"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Allergy_11"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/sulfiteCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sesameCheck"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Allergy_12"
+                    android:textSize="27sp" />
+
+                <Button
+                    android:id="@+id/save_allergy"
+                    android:layout_width="289dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/sulfiteCheck"
+                    android:layout_marginLeft="61.5dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/rectangle"
+                    android:fontFamily="@font/avenir_roman"
+                    android:onClick="submitData"
+                    android:text="@string/Done"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:backgroundTint="#5750A74E"></Button>
+
+            </RelativeLayout>
+        </ScrollView>
+
     </RelativeLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

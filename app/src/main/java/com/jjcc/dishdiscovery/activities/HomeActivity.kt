@@ -1,11 +1,9 @@
 package com.jjcc.dishdiscovery.activities
 
 import android.content.ContentValues
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -18,7 +16,6 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserDetails
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetailsHandler
 import com.google.android.material.navigation.NavigationView
 import com.jjcc.dishdiscovery.R
-import com.jjcc.dishdiscovery.activities.spoonacular.Spoonacular
 import com.jjcc.dishdiscovery.databinding.ActivityHomeNewBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -36,6 +33,7 @@ class HomeActivity : AppCompatActivity() {
     //Initialize name and email of a given user
     var userName = ""
     var userEmail = ""
+    var userSub = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,23 +54,32 @@ class HomeActivity : AppCompatActivity() {
                 R.id.nav_home, R.id.nav_profile, R.id.nav_settings
             ), drawerLayout
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
         //Make cognitoSettings and CognitoUser object to grab info using tokens
         val cognitoSettings: CognitoSettings = CognitoSettings(this@HomeActivity)
-        val thisUser : CognitoUser = cognitoSettings.userPool.currentUser
+        val thisUser: CognitoUser = cognitoSettings.userPool.currentUser
 
         //callback Handler to perform getAttributes() call from cognitoUser
-        val detailsHandler = object: GetDetailsHandler {
+        val detailsHandler = object : GetDetailsHandler {
             override fun onSuccess(cognitoUserDetails: CognitoUserDetails?) {
                 Log.i(ContentValues.TAG, "GetDetailsHandler succeeded!")
-                Log.i(ContentValues.TAG, "Attributes Returned: " + cognitoUserDetails?.attributes?.attributes)
+                Log.i(
+                    ContentValues.TAG,
+                    "Attributes Returned: " + cognitoUserDetails?.attributes?.attributes
+                )
 
                 userName = cognitoUserDetails?.attributes?.attributes?.getValue("name").toString()
                 userEmail = cognitoUserDetails?.attributes?.attributes?.getValue("email").toString()
+
+                //Testing May 18th - add userSub
+                userSub = cognitoUserDetails?.attributes?.attributes?.getValue("sub").toString()
+
                 Log.i(ContentValues.TAG, "Username: $userName")
                 Log.i(ContentValues.TAG, "Email: $userEmail")
+                Log.i(ContentValues.TAG, "Sub: $userSub")
             }
 
             override fun onFailure(exception: Exception?) {
@@ -82,25 +89,15 @@ class HomeActivity : AppCompatActivity() {
         }
 
         CoroutineScope(IO).launch {
-            val result = async { thisUser.getDetailsInBackground(detailsHandler)}.await()
-
+            val result = async { thisUser.getDetailsInBackground(detailsHandler) }.await()
             delay(1000)
+            Log.i(ContentValues.TAG, "userName: $userName")
+            Log.i(ContentValues.TAG, "userEmail: $userEmail")
+            Log.i(ContentValues.TAG, "userSub: $userSub")
             intent.putExtra("User Name", userName)
             intent.putExtra("User Email", userEmail)
-        }
-
-        val thaiButton = findViewById<Button>(R.id.thai)
-        thaiButton.setOnClickListener {
-            var intent = Intent (this, Spoonacular::class.java)
-            intent.putExtra("cuisine", "thai")
-            startActivity(intent)
-        }
-
-        val chineseButton = findViewById<Button>(R.id.chinese)
-        chineseButton.setOnClickListener {
-            var intent = Intent (this, Spoonacular::class.java)
-            intent.putExtra("cuisine", "chinese")
-            startActivity(intent)
+            intent.putExtra("User Sub", userSub)
+            Log.i(ContentValues.TAG, "Scope done")
         }
     }
 

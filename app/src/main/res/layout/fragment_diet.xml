@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.ui.diet.DietFragment">
 
-<!--    Adjust entire page and encase EVERYTHING and -56dp to account for actionbar-->
+    <!--    Adjust entire page and encase EVERYTHING and -56dp to account for actionbar-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,8 +24,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="-138dp"
                 android:layout_marginTop="-119dp"
-                android:background="@drawable/ellipse_1">
-            </View>
+                android:background="@drawable/ellipse_1"></View>
 
             <View
                 android:id="@+id/rectangle_3"
@@ -33,92 +32,6 @@
                 android:layout_height="400dp"
                 android:layout_marginTop="155dp"
                 android:background="@drawable/rect_round" />
-        </FrameLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/halal"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="168dp"
-                android:src="@drawable/halal">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/keto"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="220dp"
-                android:src="@drawable/cado">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/kosher"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="277dp"
-                android:src="@drawable/kosher">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/vegetarian"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="330dp"
-                android:src="@drawable/salad">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/vegan"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="385dp"
-                android:src="@drawable/cow">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/pescaterian"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="440dp"
-                android:src="@drawable/sushi">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/lowcarb"
-                android:layout_width="52dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="495dp"
-                android:src="@drawable/chicken">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/mediterranean"
-                android:layout_width="52dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="545dp"
-                android:src="@drawable/olive">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ddLogoAcc"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginLeft="270dp"
-                android:layout_marginTop="68dp"
-                android:src="@drawable/dd_new_logo">
-            </com.google.android.material.imageview.ShapeableImageView>
 
             <TextView
                 android:id="@+id/description"
@@ -132,116 +45,232 @@
                 android:textSize="22sp"
                 android:textStyle="normal" />
 
-            <Button
-                android:id="@+id/save_diet"
-                android:layout_width="289dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="605dp"
-                android:background="@drawable/rectangle"
-                android:fontFamily="@font/avenir_roman"
-                android:text="@string/save_CuisinePref"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                app:backgroundTint="#5750A74E">
-            </Button>
-        </RelativeLayout>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ddLogoAcc"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="270dp"
+                android:layout_marginTop="68dp"
+                android:src="@drawable/dd_new_logo"></com.google.android.material.imageview.ShapeableImageView>
+        </FrameLayout>
 
-        <RelativeLayout
+        <ScrollView
+            android:id="@+id/dietScroll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="154dp">
 
-            <LinearLayout
-                android:id="@+id/linearLayout"
+            <RelativeLayout
+                android:id="@+id/dietScrollChild"
                 android:layout_width="match_parent"
-                android:layout_height="600dp"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="160dp"
-                android:gravity="left"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/gluten"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="74dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/glutenDiet"
+                    android:src="@drawable/diet_gluten"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/keto"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/gluten"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/ketoDiet"
+                    android:src="@drawable/diet_cado"></com.google.android.material.imageview.ShapeableImageView>
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/vegetarian"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/keto"
+                    android:layout_marginLeft="82dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/veggieDiet"
+                    android:src="@drawable/diet_salad"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/vegan"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/vegetarian"
+                    android:layout_marginLeft="131dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/veganDiet"
+                    android:src="@drawable/diet_cow"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/pescaterian"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/vegan"
+                    android:layout_marginLeft="68dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/pescaDiet"
+                    android:src="@drawable/diet_sushi"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/lactoVege"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/pescaterian"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/lactoVegeDiet"
+                    android:src="@drawable/diet_lacto"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ovoVege"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/lactoVege"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/ovoVegeDiet"
+                    android:src="@drawable/diet_ovo"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/paleo"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/ovoVege"
+                    android:layout_marginLeft="137dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/paleoDiet"
+                    android:src="@drawable/diet_paleo"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/primal"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/paleo"
+                    android:layout_marginLeft="129dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/primalDiet"
+                    android:src="@drawable/diet_primal"></com.google.android.material.imageview.ShapeableImageView>
+
 
                 <CheckBox
-                    android:id="@+id/halalDiet"
+                    android:id="@+id/glutenDiet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="@string/halal"
-                    android:textSize="25sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8"
-                    tools:layout_editor_absoluteX="144dp" />
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/gluten"
+                    android:textSize="25sp" />
 
                 <CheckBox
                     android:id="@+id/ketoDiet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/glutenDiet"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/keto"
-                    android:textSize="25sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView12"
-                    tools:layout_editor_absoluteX="134dp" />
-
-                <CheckBox
-                    android:id="@+id/kosherDiet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="@string/kosher"
-                    android:textSize="25sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6"
-                    tools:layout_editor_absoluteX="173dp" />
+                    android:textSize="25sp" />
 
                 <CheckBox
                     android:id="@+id/veggieDiet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/ketoDiet"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/veggie"
-                    android:textSize="25sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView11"
-                    tools:layout_editor_absoluteX="168dp" />
+                    android:textSize="25sp" />
 
                 <CheckBox
                     android:id="@+id/veganDiet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/veggieDiet"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/vegan"
-                    android:textSize="25sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9"
-                    tools:layout_editor_absoluteX="141dp" />
+                    android:textSize="25sp" />
 
                 <CheckBox
                     android:id="@+id/pescaDiet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/veganDiet"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/pes"
-                    android:textSize="25sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2"
-                    tools:layout_editor_absoluteX="157dp" />
+                    android:textSize="25sp" />
 
                 <CheckBox
-                    android:id="@+id/lowcarbDiet"
+                    android:id="@+id/lactoVegeDiet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="@string/lowcarb"
-                    android:textSize="25sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5"
-                    tools:layout_editor_absoluteX="177dp" />
+                    android:layout_below="@id/pescaDiet"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/lacto"
+                    android:textSize="25sp" />
 
                 <CheckBox
-                    android:id="@+id/mediDiet"
+                    android:id="@+id/ovoVegeDiet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="@string/medi"
-                    android:textSize="25sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3"
-                    tools:layout_editor_absoluteX="174dp" />
-            </LinearLayout>
-        </RelativeLayout>
+                    android:layout_below="@id/lactoVegeDiet"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/ovo"
+                    android:textSize="25sp" />
+
+                <CheckBox
+                    android:id="@+id/paleoDiet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ovoVegeDiet"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/paleo"
+                    android:textSize="25sp" />
+
+                <CheckBox
+                    android:id="@+id/primalDiet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/paleoDiet"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/primal"
+                    android:textSize="25sp" />
+
+                <CheckBox
+                    android:id="@+id/fodmapDiet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/primalDiet"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/fod"
+                    android:textSize="25sp" />
+
+                <Button
+                    android:id="@+id/save_diet"
+                    android:layout_width="289dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/fodmapDiet"
+                    android:layout_marginLeft="61.5dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/rectangle"
+                    android:fontFamily="@font/avenir_roman"
+                    android:text="@string/save_CuisinePref"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:backgroundTint="#5750A74E"></Button>
+
+            </RelativeLayout>
+        </ScrollView>
     </RelativeLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

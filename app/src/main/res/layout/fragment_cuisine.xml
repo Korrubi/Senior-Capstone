@@ -31,83 +31,6 @@
                 android:layout_height="400dp"
                 android:layout_marginTop="155dp"
                 android:background="@drawable/rect_round"></View>
-        </FrameLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/japanFlag"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="168dp"
-                android:src="@drawable/japan_flag">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/usaFlag"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="225dp"
-                android:src="@drawable/usa_flag">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/koreaFlag"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="280dp"
-                android:src="@drawable/korea_flag">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/chinaFlag"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="330dp"
-                android:src="@drawable/china_flag">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/thaiFlag"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="385dp"
-                android:src="@drawable/thai_flag">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/italyFlag"
-                android:layout_width="54.25dp"
-                android:layout_height="49.23dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="440dp"
-                android:src="@drawable/italy_flag">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/turkeyFlag"
-                android:layout_width="52dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="495dp"
-                android:src="@drawable/turkey_flag">
-            </com.google.android.material.imageview.ShapeableImageView>
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/indiaFlag"
-                android:layout_width="52dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="265dp"
-                android:layout_marginTop="545dp"
-                android:src="@drawable/india_flag">
-            </com.google.android.material.imageview.ShapeableImageView>
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ddLogoAcc"
@@ -115,8 +38,7 @@
                 android:layout_height="80dp"
                 android:layout_marginLeft="270dp"
                 android:layout_marginTop="68dp"
-                android:src="@drawable/dd_new_logo">
-            </com.google.android.material.imageview.ShapeableImageView>
+                android:src="@drawable/dd_new_logo"></com.google.android.material.imageview.ShapeableImageView>
 
             <TextView
                 android:id="@+id/description"
@@ -129,116 +51,513 @@
                 android:textColor="#000000"
                 android:textSize="22sp"
                 android:textStyle="normal" />
+        </FrameLayout>
 
-            <Button
-                android:id="@+id/save_cuisine"
-                android:layout_width="289dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="65dp"
-                android:layout_marginTop="605dp"
-                android:background="@drawable/rectangle"
-                android:fontFamily="@font/avenir_roman"
-                android:text="@string/save_CuisinePref"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                app:backgroundTint="#5750A74E">
-            </Button>
-        </RelativeLayout>
-
-        <RelativeLayout
+        <ScrollView
+            android:id="@+id/cuisineScroll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="154dp">
 
-            <LinearLayout
-                android:id="@+id/linearLayout"
+            <RelativeLayout
+                android:id="@+id/cuisineScrollChild"
                 android:layout_width="match_parent"
-                android:layout_height="600dp"
-                android:layout_marginLeft="85dp"
-                android:layout_marginTop="160dp"
-                android:gravity="left"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/japanFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineJapanese"
+                    android:src="@drawable/flag_japan"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/usaFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/japanFlag"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineAmerican"
+                    android:src="@drawable/flag_usa"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/koreaFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/cuisineAmerican"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineKorean"
+                    android:src="@drawable/flag_korea"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/chinaFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/koreaFlag"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineChinese"
+                    android:src="@drawable/flag_china"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/thaiFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/chinaFlag"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineThai"
+                    android:src="@drawable/flag_thailand"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/italyFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/thaiFlag"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineItalian"
+                    android:src="@drawable/flag_italy"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/indiaFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/italyFlag"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineIndian"
+                    android:src="@drawable/flag_india"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/africanFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/indiaFlag"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineAfrican"
+                    android:src="@drawable/flag_africa"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/britishFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/africanFlag"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineBritish"
+                    android:src="@drawable/flag_british"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/cajunFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/britishFlag"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineCajun"
+                    android:src="@drawable/flag_cajun"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/caribbeanFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/cajunFlag"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineCaribbean"
+                    android:src="@drawable/flag_caribbean"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/eastEuropeanFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/caribbeanFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineEasternEuropean"
+                    android:src="@drawable/flag_easteuropean"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/europeanFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/eastEuropeanFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineEuropean"
+                    android:src="@drawable/flag_europe"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/frenchFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/europeanFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineFrench"
+                    android:src="@drawable/flag_france"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/germanFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/frenchFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineGerman"
+                    android:src="@drawable/flag_german"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/greekFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/germanFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineGreek"
+                    android:src="@drawable/flag_greek"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/irishFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/greekFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineIrish"
+                    android:src="@drawable/flag_irish"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/jewishFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/irishFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineJewish"
+                    android:src="@drawable/flag_jewish"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/latinFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/jewishFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineLatin"
+                    android:src="@drawable/flag_latin"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/mediterraneanFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/latinFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineMediterranean"
+                    android:src="@drawable/flag_mediterranean"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/middleEastFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/mediterraneanFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineMiddleEast"
+                    android:src="@drawable/flag_middleeast"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/nordicFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/middleEastFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineNordic"
+                    android:src="@drawable/flag_nordic"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/southernFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/nordicFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineSouthern"
+                    android:src="@drawable/flag_southern"></com.google.android.material.imageview.ShapeableImageView>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/spanishFlag"
+                    android:layout_width="55dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/southernFlag"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@id/cuisineSpanish"
+                    android:src="@drawable/flag_spanish"></com.google.android.material.imageview.ShapeableImageView>
 
                 <CheckBox
                     android:id="@+id/cuisineJapanese"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/japanese"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8"
-                    tools:layout_editor_absoluteX="144dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
                     android:id="@+id/cuisineAmerican"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/cuisineJapanese"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/american"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView12"
-                    tools:layout_editor_absoluteX="132dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
                     android:id="@+id/cuisineKorean"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/cuisineAmerican"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/korean"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6"
-                    tools:layout_editor_absoluteX="173dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
                     android:id="@+id/cuisineChinese"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/cuisineKorean"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/chinese"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView11"
-                    tools:layout_editor_absoluteX="168dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
                     android:id="@+id/cuisineThai"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/cuisineChinese"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/thai"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9"
-                    tools:layout_editor_absoluteX="141dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
                     android:id="@+id/cuisineItalian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/cuisineThai"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/italy"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2"
-                    tools:layout_editor_absoluteX="157dp" />
-
-                <CheckBox
-                    android:id="@+id/cuisineTurkish"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="@string/turkish"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5"
-                    tools:layout_editor_absoluteX="177dp" />
+                    android:textSize="27sp" />
 
                 <CheckBox
                     android:id="@+id/cuisineIndian"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_below="@id/cuisineItalian"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/indian"
-                    android:textSize="27sp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3"
-                    tools:layout_editor_absoluteX="174dp" />
-            </LinearLayout>
-        </RelativeLayout>
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineAfrican"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineIndian"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/african"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineBritish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineAfrican"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/british"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineCajun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineBritish"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/cajun"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineCaribbean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineCajun"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/caribbean"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineEasternEuropean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineCaribbean"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/eastEuropean"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineEuropean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineEasternEuropean"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/european"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineFrench"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineEuropean"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/french"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineGerman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineFrench"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/german"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineGreek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineGerman"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/greek"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineIrish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineGreek"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/irish"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineJewish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineIrish"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/jewish"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineLatin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineJewish"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Latin"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineMediterranean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineLatin"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/mediterranean"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineMiddleEast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineMediterranean"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/middleEast"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineNordic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineMiddleEast"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/Nordic"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineSouthern"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineNordic"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/southern"
+                    android:textSize="27sp" />
+
+                <CheckBox
+                    android:id="@+id/cuisineSpanish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cuisineSouthern"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/spanish"
+                    android:textSize="27sp" />
+
+                <Button
+                    android:id="@+id/save_cuisine"
+                    android:layout_width="289dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/cuisineSpanish"
+                    android:layout_marginLeft="61.5dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/rectangle"
+                    android:fontFamily="@font/avenir_roman"
+                    android:text="@string/save_CuisinePref"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:backgroundTint="#5750A74E"></Button>
+
+            </RelativeLayout>
+        </ScrollView>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

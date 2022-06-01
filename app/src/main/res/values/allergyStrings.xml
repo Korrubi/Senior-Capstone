@@ -8,7 +8,11 @@
     <string name="Allergy_5">Tree Nuts</string>
     <string name="Allergy_6">Wheat</string>
     <string name="Allergy_7">Soy</string>
-    <string name="Allergy_8">Fish</string>
+    <string name="Allergy_8">Gluten</string>
+    <string name="Allergy_9">Grain</string>
+    <string name="Allergy_10">Seafood</string>
+    <string name="Allergy_11">Sesame</string>
+    <string name="Allergy_12">Sulfite</string>
     <string name="save_AllergyPref">Save Preferences</string>
     <string name="description">You can always update these later.</string>
 </resources>

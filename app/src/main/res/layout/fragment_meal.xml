@@ -61,7 +61,7 @@
                 android:layout_marginTop="350dp"
                 android:layout_marginLeft="85dp"
                 android:background="@android:color/transparent"
-                android:src="@drawable/icon_favorite">
+                android:src="@drawable/ic_favorite">
             </ImageButton>
 
             <TextView
@@ -159,7 +159,8 @@
                 android:onClick="submitData"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                app:backgroundTint="#5750A74E"></Button>
+                app:backgroundTint="#5750A74E">
+            </Button>
 
             <Button
                 android:id="@+id/share"
@@ -173,7 +174,8 @@
                 android:onClick="submitData"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                app:backgroundTint="#5750A74E"></Button>
+                app:backgroundTint="#5750A74E">
+            </Button>
         </FrameLayout>
         </ScrollView>
     </RelativeLayout>

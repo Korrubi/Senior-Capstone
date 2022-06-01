@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
         //w/o profile functionality
         val guestButton = findViewById<Button>(R.id.guest)
         guestButton.setOnClickListener{
-                val intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
         }
 
         //Links account creation button on startup page
@@ -33,7 +33,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, UserSignActivity::class.java)
             startActivity(intent)
         }
-
     }
-
 }
