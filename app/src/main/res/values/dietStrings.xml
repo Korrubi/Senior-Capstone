@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="DietTitle">Select Diets</string>
-    <string name="gluten">Gluten-Free</string>
-    <string name="keto">Keto</string>
+    <string name="gluten">Gluten Free</string>
+    <string name="keto">Ketogenic</string>
     <string name="veggie">Vegetarian</string>
     <string name="vegan">Vegan</string>
     <string name="lacto">Lacto-Vegetarian</string>
@@ -10,7 +10,7 @@
     <string name="paleo">Paleo</string>
     <string name="primal">Primal</string>
     <string name="fod">Low FODMAP</string>
-    <string name="pes">Pescatarian</string>
+    <string name="pes">Pescetarian</string>
 
     <string name="save_dietPref">Save Preferences</string>
 

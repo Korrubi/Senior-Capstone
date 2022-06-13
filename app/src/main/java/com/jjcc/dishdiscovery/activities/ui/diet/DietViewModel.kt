@@ -1,8 +1,13 @@
 package com.jjcc.dishdiscovery.activities.ui.diet
 
 import android.database.Observable
+import android.text.Spannable
+import androidx.databinding.ObservableArrayMap
+import androidx.databinding.ObservableField
+import androidx.databinding.ObservableMap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import aws.sdk.kotlin.services.dynamodb.model.AttributeValue
 import org.w3c.dom.Attr
@@ -22,10 +27,12 @@ class DietViewModel : ViewModel() {
      private var _dietMap = mutableMapOf<String, AttributeValue>()
 
     var dietMap: MutableMap<String, AttributeValue> = mutableMapOf()  //Variable
-        get() = _dietMap
+        get() = newMap
+
+    var newMap = ObservableArrayMap<String, AttributeValue>()
 
 
-    private var _dietMap1 = MutableLiveData<String>()
+
 //    var dietMap1: LiveData<Spannable>
 
 //    var dietMap1 : Observable<MutableMap<String, AttributeValue>> = mutableMapOf()

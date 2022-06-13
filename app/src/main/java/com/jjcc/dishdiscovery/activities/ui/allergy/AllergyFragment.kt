@@ -43,14 +43,11 @@ class AllergyFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_allergy, container, false)
 
         //GET request to query the Table using id (partition key) to see existing data
-        try
-        {
+        try {
             Log.i(ContentValues.TAG, "Before Retrieve Data")
             retrieveData(view)
             Log.i(ContentValues.TAG, "After Retrieve Data")
-        }
-        catch (ex: Exception)
-        {
+        } catch (ex: Exception) {
             Log.i(ContentValues.TAG, "No initial Data: " + ex.message)
         }
 
@@ -73,8 +70,7 @@ class AllergyFragment : Fragment() {
             //checks for true values only
             //key1.key can give just key names, like Vegetarian, Vegan etc.
             //key1.value will give Bool(value=true) or Bool(value=false)
-            if (key1.value.toString().equals("Bool(value=true)"))
-            {
+            if (key1.value.toString().equals("Bool(value=true)")) {
                 Log.i(ContentValues.TAG, "Key: " + key1.key + " Value: " + key1.value)
                 if (key1.key.equals("Dairy")) {
                     val dairyBox: CheckBox = view.findViewById(R.id.dairyCheck)
@@ -154,7 +150,12 @@ class AllergyFragment : Fragment() {
         // https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html
         val partitionAlias = "#a"
 //        val count = data.queryDynTable(ddb, tableName, partitionKeyName, partitionKeyVal, partitionAlias)
-        allergyMap = data.getSpecificItem(ddb, tableName, partitionKeyName, partitionKeyVal) as MutableMap<String, AttributeValue>
+        allergyMap = data.getSpecificItem(
+            ddb,
+            tableName,
+            partitionKeyName,
+            partitionKeyVal
+        ) as MutableMap<String, AttributeValue>
 
         //Mapping the items retrieved
 //        allergyMap.forEach { key1 ->

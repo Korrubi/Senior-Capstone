@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.ui.verify.verifyFragment">
 
     <FrameLayout
@@ -18,8 +18,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="-138dp"
             android:layout_marginTop="-119dp"
-            android:background="@drawable/ellipse_1">
-        </View>
+            android:background="@drawable/ellipse_1"></View>
 
         <TextView
             android:id="@+id/profileTitle"
@@ -53,8 +52,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
-            android:textSize="18sp">
-        </EditText>
+            android:textSize="18sp"></EditText>
 
         <EditText
             android:id="@+id/enterEmailAddress"
@@ -69,8 +67,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
-            android:textSize="18sp">
-        </EditText>
+            android:textSize="18sp"></EditText>
 
         <Button
             android:id="@+id/verifyButton"
@@ -83,17 +80,15 @@
             android:text="@string/verifyButtonConfirm"
             android:textAlignment="center"
             android:textColor="@color/black"
-            app:backgroundTint="#5750A74E">
-        </Button>
+            app:backgroundTint="#5750A74E"></Button>
 
         <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/fnpLogo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="125dp"
             android:layout_marginLeft="155dp"
-            android:id="@+id/fnpLogo"
-            android:src="@drawable/dd_new_logo">
-        </com.google.android.material.imageview.ShapeableImageView>
+            android:layout_marginTop="125dp"
+            android:src="@drawable/dd_new_logo"></com.google.android.material.imageview.ShapeableImageView>
 
     </FrameLayout>
 </FrameLayout>

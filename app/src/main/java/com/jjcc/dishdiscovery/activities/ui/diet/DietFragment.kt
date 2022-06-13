@@ -36,7 +36,6 @@ class DietFragment : Fragment() {
     private val viewModel: DietViewModel by viewModels()
 
 
-
     //May 31st, added a Map Data Structure to hold queried data
     var dietMap = mutableMapOf<String, AttributeValue>()
 
@@ -46,24 +45,10 @@ class DietFragment : Fragment() {
     ): View? {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_diet, container, false)
+
         binding.dietViewModel = viewModel
 
-        binding.ketoDiet
         binding.lifecycleOwner = viewLifecycleOwner
-
-//        fun onCheckBoxClicked(view: View)
-//        {
-//            if (view is CheckBox) {
-//                val checked: Boolean = view.isChecked
-//
-//                val ketoBox1 : CheckBox = view.findViewById(R.id.ketoDiet)
-//                if (ketoBox1.isChecked.equals(false))
-//                {
-//                    ketoBox1.setChecked(true);
-//                }
-//
-//            }
-//        }
 
         val view: View = inflater.inflate(R.layout.fragment_diet, container, false)
         //_binding = FragmentDietBinding.inflate(inflater, container, false)
@@ -72,14 +57,21 @@ class DietFragment : Fragment() {
         // val view: View = inflater.inflate(R.layout.fragment_diet, container, false)
 
         //GET request to query the Table using id (partition key) to see existing data
-        try
-        {
+        try {
             Log.i(ContentValues.TAG, "Before Retrieve Data")
             retrieveData(view)
             Log.i(ContentValues.TAG, "After Retrieve Data")
-        }
-        catch (ex: Exception)
-        {
+            viewModel.dietMap = dietMap
+
+            Log.i(ContentValues.TAG, "Fragment: ")
+            dietMap.forEach { key1 ->
+                Log.i(ContentValues.TAG, "Key: " + key1 + " Value: " + key1.value.toString())
+            }
+            Log.i(ContentValues.TAG, "ViewModel: ")
+            viewModel.dietMap.forEach { key1 ->
+                Log.i(ContentValues.TAG, "Key: " + key1 + " Value: " + key1.value.toString())
+            }
+        } catch (ex: Exception) {
             Log.i(ContentValues.TAG, "No initial Data: " + ex.message)
         }
 
@@ -104,8 +96,7 @@ class DietFragment : Fragment() {
             //checks for true values only
             //key1.key can give just key names, like Vegetarian, Vegan etc.
             //key1.value will give Bool(value=true) or Bool(value=false)
-            if (key1.value.toString().equals("Bool(value=true)"))
-            {
+            if (key1.value.toString().equals("Bool(value=true)")) {
                 Log.i(ContentValues.TAG, "Key: " + key1.key + " Value: " + key1.value)
                 if (key1.key.equals("Low FODMAP")) {
                     val fodMapBox: CheckBox = view.findViewById(R.id.fodmapDiet)
@@ -131,15 +122,15 @@ class DietFragment : Fragment() {
                     val veganBox: CheckBox = view.findViewById(R.id.veganDiet)
                     veganBox.isChecked = true;
                 }
-                if (key1.key.equals("Keto")) {
+                if (key1.key.equals("Ketogenic")) {
                     val ketoBox: CheckBox = view.findViewById(R.id.ketoDiet)
                     ketoBox.isChecked = true;
                 }
-                if (key1.key.equals("Pescatarian")) {
+                if (key1.key.equals("Pescetarian")) {
                     val pescaBox: CheckBox = view.findViewById(R.id.pescaDiet)
                     pescaBox.isChecked = true;
                 }
-                if (key1.key.equals("Gluten")) {
+                if (key1.key.equals("Gluten Free")) {
                     val glutenBox: CheckBox = view.findViewById(R.id.glutenDiet)
                     glutenBox.isChecked = true;
                 }
@@ -178,7 +169,12 @@ class DietFragment : Fragment() {
         // https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html
         val partitionAlias = "#a"
 //        val count = data.queryDynTable(ddb, tableName, partitionKeyName, partitionKeyVal, partitionAlias)
-        dietMap = data.getSpecificItem(ddb, tableName, partitionKeyName, partitionKeyVal) as MutableMap<String, AttributeValue>
+        dietMap = data.getSpecificItem(
+            ddb,
+            tableName,
+            partitionKeyName,
+            partitionKeyVal
+        ) as MutableMap<String, AttributeValue>
 
         //Mapping the items retrieved
 //        dietMap.forEach { key1 ->
@@ -223,15 +219,15 @@ class DietFragment : Fragment() {
         // May 17th -- removed the random UUID
         // val uuid: UUID = UUID.randomUUID()
         // val keyVal = uuid.toString()
-        val glutenDiet = "Gluten"
+        val glutenDiet = "Gluten Free"
         val glutenDietVal = gluten.isChecked
-        val ketoDiet = "Keto"
+        val ketoDiet = "Ketogenic"
         val ketoDietVal = keto.isChecked
         val vegetarianDiet = "Vegetarian"
         val vegetarianDietVal = vegetarian.isChecked
         val veganDiet = "Vegan"
         val veganDietVal = vegan.isChecked
-        val pescatarianDiet = "Pescatarian"
+        val pescatarianDiet = "Pescetarian"
         val pescatarianDietVal = pescatarian.isChecked
         val lactoVegeDiet = "Lacto-Vegetarian"
         val lactoDietVal = lactoVege.isChecked

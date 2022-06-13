@@ -226,7 +226,7 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
-        val koreanButton = root.findViewById(R.id.japanese) as ImageButton;
+        val koreanButton = root.findViewById(R.id.korean) as ImageButton;
         koreanButton.setOnClickListener {
             var intent = Intent(this.context, Spoonacular::class.java)
             intent.putExtra("cuisine", "korean")

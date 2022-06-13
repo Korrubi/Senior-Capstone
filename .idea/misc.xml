@@ -7,11 +7,13 @@
         <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/app_bar_home_activity.xml" value="0.21693840579710144" />
         <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/content_home_activity.xml" value="0.21693840579710144" />
         <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/fragment_allergy.xml" value="0.3255208333333333" />
-        <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/fragment_cuisine.xml" value="0.5" />
-        <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/fragment_diet.xml" value="0.33" />
+        <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/fragment_cuisine.xml" value="0.2960829493087558" />
+        <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/fragment_diet.xml" value="0.5" />
         <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/fragment_home.xml" value="0.27309782608695654" />
         <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/fragment_meal.xml" value="0.45260416666666664" />
         <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/fragment_search.xml" value="0.27309782608695654" />
+        <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/fragment_signup.xml" value="0.266304347826087" />
+        <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/fragment_verify.xml" value="0.1" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.5475" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/drawable/account_name_rectangle.xml" value="0.5475" />
         <entry key="..\:/Users/Jason/AndroidStudioProjects/Dish_Discovery/app/src/main/res/drawable/ellipse_1.xml" value="0.5475" />
