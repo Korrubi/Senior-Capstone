@@ -68,7 +68,7 @@
                     android:id="@+id/japanFlag"
                     android:layout_width="55dp"
                     android:layout_height="50dp"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="63dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineJapanese"
                     android:src="@drawable/flag_japan"></com.google.android.material.imageview.ShapeableImageView>
@@ -78,7 +78,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/japanFlag"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="66dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineAmerican"
                     android:src="@drawable/flag_usa"></com.google.android.material.imageview.ShapeableImageView>
@@ -88,7 +88,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/cuisineAmerican"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="95dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineKorean"
                     android:src="@drawable/flag_korea"></com.google.android.material.imageview.ShapeableImageView>
@@ -98,7 +98,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/koreaFlag"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="85dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineChinese"
                     android:src="@drawable/flag_china"></com.google.android.material.imageview.ShapeableImageView>
@@ -108,7 +108,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/chinaFlag"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="130dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineThai"
                     android:src="@drawable/flag_thailand"></com.google.android.material.imageview.ShapeableImageView>
@@ -118,7 +118,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/thaiFlag"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="108dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineItalian"
                     android:src="@drawable/flag_italy"></com.google.android.material.imageview.ShapeableImageView>
@@ -128,7 +128,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/italyFlag"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="107dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineIndian"
                     android:src="@drawable/flag_india"></com.google.android.material.imageview.ShapeableImageView>
@@ -138,7 +138,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/indiaFlag"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="95dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineAfrican"
                     android:src="@drawable/flag_africa"></com.google.android.material.imageview.ShapeableImageView>
@@ -148,7 +148,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/africanFlag"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="105dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineBritish"
                     android:src="@drawable/flag_british"></com.google.android.material.imageview.ShapeableImageView>
@@ -158,7 +158,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/britishFlag"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="113dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineCajun"
                     android:src="@drawable/flag_cajun"></com.google.android.material.imageview.ShapeableImageView>
@@ -168,7 +168,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/cajunFlag"
-                    android:layout_marginLeft="65dp"
+                    android:layout_marginLeft="60dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineCaribbean"
                     android:src="@drawable/flag_caribbean"></com.google.android.material.imageview.ShapeableImageView>
@@ -178,8 +178,8 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/caribbeanFlag"
-                    android:layout_marginLeft="45dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="-5dp"
+                    android:layout_marginTop="15dp"
                     android:layout_toRightOf="@id/cuisineEasternEuropean"
                     android:src="@drawable/flag_easteuropean"></com.google.android.material.imageview.ShapeableImageView>
 
@@ -188,8 +188,8 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/eastEuropeanFlag"
-                    android:layout_marginLeft="45dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="15dp"
                     android:layout_toRightOf="@id/cuisineEuropean"
                     android:src="@drawable/flag_europe"></com.google.android.material.imageview.ShapeableImageView>
 
@@ -198,8 +198,8 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/europeanFlag"
-                    android:layout_marginLeft="45dp"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="102dp"
+                    android:layout_marginTop="12dp"
                     android:layout_toRightOf="@id/cuisineFrench"
                     android:src="@drawable/flag_france"></com.google.android.material.imageview.ShapeableImageView>
 
@@ -208,7 +208,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/frenchFlag"
-                    android:layout_marginLeft="45dp"
+                    android:layout_marginLeft="90dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineGerman"
                     android:src="@drawable/flag_german"></com.google.android.material.imageview.ShapeableImageView>
@@ -218,7 +218,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/germanFlag"
-                    android:layout_marginLeft="45dp"
+                    android:layout_marginLeft="115dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineGreek"
                     android:src="@drawable/flag_greek"></com.google.android.material.imageview.ShapeableImageView>
@@ -228,7 +228,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/greekFlag"
-                    android:layout_marginLeft="45dp"
+                    android:layout_marginLeft="132dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineIrish"
                     android:src="@drawable/flag_irish"></com.google.android.material.imageview.ShapeableImageView>
@@ -238,7 +238,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/irishFlag"
-                    android:layout_marginLeft="45dp"
+                    android:layout_marginLeft="100dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineJewish"
                     android:src="@drawable/flag_jewish"></com.google.android.material.imageview.ShapeableImageView>
@@ -248,7 +248,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/jewishFlag"
-                    android:layout_marginLeft="45dp"
+                    android:layout_marginLeft="125dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineLatin"
                     android:src="@drawable/flag_latin"></com.google.android.material.imageview.ShapeableImageView>
@@ -258,7 +258,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/latinFlag"
-                    android:layout_marginLeft="45dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineMediterranean"
                     android:src="@drawable/flag_mediterranean"></com.google.android.material.imageview.ShapeableImageView>
@@ -268,7 +268,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/mediterraneanFlag"
-                    android:layout_marginLeft="45dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineMiddleEast"
                     android:src="@drawable/flag_middleeast"></com.google.android.material.imageview.ShapeableImageView>
@@ -278,7 +278,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/middleEastFlag"
-                    android:layout_marginLeft="45dp"
+                    android:layout_marginLeft="105dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineNordic"
                     android:src="@drawable/flag_nordic"></com.google.android.material.imageview.ShapeableImageView>
@@ -288,7 +288,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/nordicFlag"
-                    android:layout_marginLeft="45dp"
+                    android:layout_marginLeft="77dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineSouthern"
                     android:src="@drawable/flag_southern"></com.google.android.material.imageview.ShapeableImageView>
@@ -298,7 +298,7 @@
                     android:layout_width="55dp"
                     android:layout_height="50dp"
                     android:layout_below="@id/southernFlag"
-                    android:layout_marginLeft="45dp"
+                    android:layout_marginLeft="90dp"
                     android:layout_marginTop="6dp"
                     android:layout_toRightOf="@id/cuisineSpanish"
                     android:src="@drawable/flag_spanish"></com.google.android.material.imageview.ShapeableImageView>
@@ -414,7 +414,7 @@
 
                 <CheckBox
                     android:id="@+id/cuisineEasternEuropean"
-                    android:layout_width="wrap_content"
+                    android:layout_width="220dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/cuisineCaribbean"
                     android:layout_marginLeft="60dp"

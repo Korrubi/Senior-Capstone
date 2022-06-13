@@ -33,4 +33,6 @@ class HomeViewModel : ViewModel() {
     val NoonHour: LiveData<LocalTime>
         get() = _NoonHour
 
+//    private val _DinnerHour = MutableLiveData(LocalTime.)
+
 }
