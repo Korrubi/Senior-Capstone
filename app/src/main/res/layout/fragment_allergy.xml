@@ -329,6 +329,7 @@
                     android:layout_below="@id/sulfiteCheck"
                     android:layout_marginLeft="61.5dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:background="@drawable/rectangle"
                     android:fontFamily="@font/avenir_roman"
                     android:onClick="submitData"
