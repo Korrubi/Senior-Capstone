@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,11 +16,8 @@ import com.jjcc.dishdiscovery.R;
 import com.jjcc.dishdiscovery.activities.spoonacular.adapters.ComplexRecipeAdapter;
 import com.jjcc.dishdiscovery.activities.spoonacular.adapters.RandomRecipeAdapter;
 import com.jjcc.dishdiscovery.activities.spoonacular.listeners.ComplexRecipeResponseListener;
-import com.jjcc.dishdiscovery.activities.spoonacular.listeners.RandomRecipeResponseListener;
 import com.jjcc.dishdiscovery.activities.spoonacular.listeners.RecipeClickListener;
-import com.jjcc.dishdiscovery.activities.spoonacular.models.RandomRecipeApiResponse;
 import com.jjcc.dishdiscovery.activities.spoonacular.models.complexSearch.ComplexRecipeApiResponse;
-import com.jjcc.dishdiscovery.activities.ui.meal.MealFragment;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,7 +29,8 @@ public class Spoonacular extends AppCompatActivity {
     RandomRecipeAdapter randomRecipeAdapter;
     ComplexRecipeAdapter complexRecipeAdapter;
     RecyclerView recyclerView;
-    List<String> tags = new ArrayList<>();
+    List<String> cuisinestr = new ArrayList<>();
+    List<String> querystr = new ArrayList<>();
     SearchView searchView;
 
 
@@ -52,10 +49,10 @@ public class Spoonacular extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                tags.clear();
-                tags.add(cuisine);
-                tags.add(query);
-                manager.getComplexRecipes(complexRecipeResponselistener, tags);
+                querystr.clear();
+                cuisinestr.add(cuisine);
+                querystr.add(query);
+                manager.getComplexRecipes(complexRecipeResponselistener, cuisinestr, querystr);
                 Log.i("TAG Name", "I'm Spoonacular.java: " + cuisine + query);
                 dialog.show();
                 return true;
@@ -72,7 +69,7 @@ public class Spoonacular extends AppCompatActivity {
         //Sanity check for passed in cuisine name
         Log.i("TAG Name", "I'm Spoonacular.java: " + cuisine );
         manager = new RequestManager(this);
-        manager.getComplexRecipes((ComplexRecipeResponseListener) complexRecipeResponselistener, Collections.singletonList(cuisine));
+        manager.getComplexRecipes((ComplexRecipeResponseListener) complexRecipeResponselistener, Collections.singletonList(cuisine), querystr);
         dialog.show();
     }
 

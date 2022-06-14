@@ -4,6 +4,6 @@
     <string name="FavoriteThisDish">Favorite This Dish!</string>
     <string name="RateThisDish">Rate This Dish!</string>
     <string name="ViewNearestOptions">View Nearest Options</string>
-    <string name="ViewRecipes">View Recipes</string>
+    <string name="ViewRecipe">View Recipe</string>
     <string name="Share">Share!</string>
 </resources>

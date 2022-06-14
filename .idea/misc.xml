@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/School/CapStone/DD/DD 6-13-22/dishdiscovery-dishdiscovery/app/src/main/res/layout/activity_recipe_information.xml" value="0.33" />
+        <entry key="..\:/School/CapStone/DD/DD 6-13-22/dishdiscovery-dishdiscovery/app/src/main/res/layout/activity_recipe_instructions.xml" value="0.33" />
+        <entry key="..\:/School/CapStone/DD/DD 6-13-22/dishdiscovery-dishdiscovery/app/src/main/res/layout/fragment_meal.xml" value="0.17685185185185184" />
+        <entry key="..\:/School/CapStone/DD/DD 6-13-22/dishdiscovery-dishdiscovery/app/src/main/res/layout/list_complex_recipe.xml" value="0.32760416666666664" />
+        <entry key="..\:/School/CapStone/DD/DD 6-13-22/dishdiscovery-dishdiscovery/app/src/main/res/layout/list_instruction_step_items.xml" value="0.5" />
+        <entry key="..\:/School/CapStone/DD/DD 6-13-22/dishdiscovery-dishdiscovery/app/src/main/res/layout/list_instructions.xml" value="0.25" />
+        <entry key="..\:/School/CapStone/DD/DD 6-13-22/dishdiscovery-dishdiscovery/app/src/main/res/layout/list_instuction_steps.xml" value="0.17685185185185184" />
+        <entry key="..\:/School/CapStone/DD/DD 6-13-22/dishdiscovery-dishdiscovery/app/src/main/res/layout/list_meal_ingredients.xml" value="0.33" />
+        <entry key="..\:/School/CapStone/DD/DD 6-13-22/dishdiscovery-dishdiscovery/app/src/main/res/layout/list_similar_recipe.xml" value="0.67" />
+        <entry key="..\:/School/CapStone/DD/DD 6-13-22/dishdiscovery-dishdiscovery/app/src/main/res/layout/nav_header_home_activity.xml" value="0.4257246376811594" />
+        <entry key="..\:/School/CapStone/DD/DD 6-13-22/dishdiscovery-dishdiscovery/app/src/main/res/layout/spoonacular.xml" value="0.32760416666666664" />
         <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/activity_recipe_information.xml" value="0.21693840579710144" />
         <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/app_bar_home_activity.xml" value="0.21693840579710144" />
         <entry key="..\:/Users/Jarrel/Documents/GitHub/Latest DD May 2022/dishdiscovery-dishdiscovery/app/src/main/res/layout/content_home_activity.xml" value="0.21693840579710144" />

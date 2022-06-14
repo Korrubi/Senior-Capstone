@@ -19,164 +19,153 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="-138dp"
             android:layout_marginTop="-119dp"
-            android:background="@drawable/ellipse_1">
-        </View>
+            android:background="@drawable/ellipse_1"></View>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/mealName"
-                android:text="@string/mealName"
-                android:layout_width="250dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="75dp"
-                android:fontFamily="@font/avenir_roman"
-                android:textColor="#000000"
-                android:textSize="30sp"
-                android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/mealName"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="75dp"
+                    android:fontFamily="@font/avenir_roman"
+                    android:text="@string/mealName"
+                    android:textColor="#000000"
+                    android:textSize="30sp"
+                    android:textStyle="normal" />
 
-            <TextView
-                android:id="@+id/favoriteThisDish"
-                android:text="@string/FavoriteThisDish"
-                android:layout_width="175dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="325dp"
-                android:layout_marginLeft="25dp"
-                android:fontFamily="@font/avenir_roman"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/favoriteThisDish"
+                    android:layout_width="175dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="325dp"
+                    android:fontFamily="@font/avenir_roman"
+                    android:text="@string/FavoriteThisDish"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
 
-            <ImageButton
-                android:id="@+id/heartButton"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="350dp"
-                android:layout_marginLeft="85dp"
-                android:background="@android:color/transparent"
-                android:src="@drawable/ic_favorite">
-            </ImageButton>
+                <ImageButton
+                    android:id="@+id/heartButton"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="350dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_favorite"></ImageButton>
 
-            <TextView
-                android:id="@+id/rateThisDish"
-                android:text="@string/RateThisDish"
-                android:layout_width="140dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="325dp"
-                android:layout_marginLeft="252dp"
-                android:fontFamily="@font/avenir_roman"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/rateThisDish"
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="252dp"
+                    android:layout_marginTop="325dp"
+                    android:fontFamily="@font/avenir_roman"
+                    android:text="@string/RateThisDish"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="350dp"
-                android:layout_marginLeft="255dp"
-                android:src="@drawable/star">
-            </com.google.android.material.imageview.ShapeableImageView>
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="255dp"
+                    android:layout_marginTop="350dp"
+                    android:src="@drawable/star"></com.google.android.material.imageview.ShapeableImageView>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="350dp"
-                android:layout_marginLeft="280dp"
-                android:src="@drawable/star">
-            </com.google.android.material.imageview.ShapeableImageView>
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="280dp"
+                    android:layout_marginTop="350dp"
+                    android:src="@drawable/star"></com.google.android.material.imageview.ShapeableImageView>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="350dp"
-                android:layout_marginLeft="305dp"
-                android:src="@drawable/star">
-            </com.google.android.material.imageview.ShapeableImageView>
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="305dp"
+                    android:layout_marginTop="350dp"
+                    android:src="@drawable/star"></com.google.android.material.imageview.ShapeableImageView>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="350dp"
-                android:layout_marginLeft="330dp"
-                android:src="@drawable/star">
-            </com.google.android.material.imageview.ShapeableImageView>
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="330dp"
+                    android:layout_marginTop="350dp"
+                    android:src="@drawable/star"></com.google.android.material.imageview.ShapeableImageView>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="350dp"
-                android:layout_marginLeft="355dp"
-                android:src="@drawable/star">
-            </com.google.android.material.imageview.ShapeableImageView>
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="355dp"
+                    android:layout_marginTop="350dp"
+                    android:src="@drawable/star"></com.google.android.material.imageview.ShapeableImageView>
 
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/burger"
-                android:layout_width="324dp"
-                android:layout_height="191dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="125dp"
-                android:src="@drawable/burger">
-            </com.google.android.material.imageview.ShapeableImageView>
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/burger"
+                    android:layout_width="324dp"
+                    android:layout_height="191dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="125dp"
+                    android:src="@drawable/burger"></com.google.android.material.imageview.ShapeableImageView>
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/googleMap"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="435dp"
-                android:src="@drawable/google_map">
-            </com.google.android.material.imageview.ShapeableImageView>
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/googleMap"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="435dp"
+                    android:src="@drawable/google_map"></com.google.android.material.imageview.ShapeableImageView>
 
-            <TextView
-                android:id="@+id/findNearestLocations"
-                android:text="@string/ViewNearestOptions"
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="400dp"
-                android:fontFamily="@font/avenir_roman"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/findNearestLocations"
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="400dp"
+                    android:fontFamily="@font/avenir_roman"
+                    android:text="@string/ViewNearestOptions"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
 
-            <Button
-                android:id="@+id/viewRecipes"
-                android:text="@string/ViewRecipes"
-                android:layout_width="289dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="645dp"
-                android:background="@drawable/rectangle"
-                android:fontFamily="@font/avenir_roman"
-                android:onClick="submitData"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                app:backgroundTint="#5750A74E">
-            </Button>
+                <Button
+                    android:id="@+id/viewRecipes"
+                    android:layout_width="289dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="645dp"
+                    android:background="@drawable/rectangle"
+                    android:fontFamily="@font/avenir_roman"
+                    android:onClick="submitData"
+                    android:text="@string/ViewRecipe"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:backgroundTint="#5750A74E"></Button>
 
-            <Button
-                android:id="@+id/share"
-                android:text="@string/Share"
-                android:layout_width="289dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="700dp"
-                android:background="@drawable/rectangle"
-                android:fontFamily="@font/avenir_roman"
-                android:onClick="submitData"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                app:backgroundTint="#5750A74E">
-            </Button>
-        </FrameLayout>
+                <Button
+                    android:id="@+id/share"
+                    android:layout_width="289dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="700dp"
+                    android:background="@drawable/rectangle"
+                    android:fontFamily="@font/avenir_roman"
+                    android:onClick="submitData"
+                    android:text="@string/Share"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:backgroundTint="#5750A74E"></Button>
+            </FrameLayout>
         </ScrollView>
     </RelativeLayout>
 
