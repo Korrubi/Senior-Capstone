@@ -91,7 +91,7 @@ public class RecipeInformationActivity extends AppCompatActivity {
         manager.getSimilarRecipes(similarRecipesListener, id);
 
         dialog = new ProgressDialog(this);
-        dialog.setTitle("Loading Detils...");
+        dialog.setTitle("Loading Details...");
         dialog.show();
 
         button.setOnClickListener(new View.OnClickListener() {
