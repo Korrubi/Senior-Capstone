@@ -75,6 +75,10 @@ class UserSignActivity : AppCompatActivity() {
         buttonRegister.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
 
+                //Checks if passwords match, if they do not, break.
+                if(validatePassword()){
+                    return
+                }
                 //passes to Cognito
                 userAttributes.addAttribute("name", inputName.text.toString())
                 userAttributes.addAttribute("email", inputEmail.text.toString())
@@ -85,6 +89,21 @@ class UserSignActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+    private fun validatePassword(): Boolean {
+        val textInputLayout = findViewById<TextInputLayout>(R.id.create_password)
+        val inputPassword = textInputLayout.editText
+
+        val confirmNewPassword = findViewById<TextInputLayout>(R.id.confirm_create_password)
+        val inputConfirmPassword = confirmNewPassword.editText
+
+        //Checks if passwords DO NOT match, throws error message if true
+        if(!inputPassword?.text.toString().equals(inputConfirmPassword?.text.toString())){
+            Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_LONG).show()
+            return true
+        }
+        return false
     }
 
     // Shows AlertDialog when signUp fails, uses regex to parse error msg to display

@@ -81,10 +81,10 @@ public class RequestManager {
     }
 
 
-    public void getComplexRecipes(ComplexRecipeResponseListener listener, List<String> cuisine, List<String> query) {
+    public void getComplexRecipes(ComplexRecipeResponseListener listener,  List<String> query) {
         CallComplexRecipes callComplexRecipes = retrofit.create(CallComplexRecipes.class);
 
-        Call<ComplexRecipeApiResponse> call = callComplexRecipes.callComplexRecipe(context.getString(R.string.api_key),"10", cuisine, query);
+        Call<ComplexRecipeApiResponse> call = callComplexRecipes.callComplexRecipe(context.getString(R.string.api_key),"10", query);
 
         call.enqueue(new Callback<ComplexRecipeApiResponse>() {
             @Override
@@ -153,7 +153,6 @@ public class RequestManager {
         Call<ComplexRecipeApiResponse> callComplexRecipe(
                 @Query("apiKey") String apiKey,
                 @Query("number") String number,
-                @Query("cuisine") List<String> cuisine,
                 @Query("query") List<String> query
         );
     }

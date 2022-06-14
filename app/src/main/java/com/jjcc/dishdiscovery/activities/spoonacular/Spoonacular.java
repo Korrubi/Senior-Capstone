@@ -29,8 +29,9 @@ public class Spoonacular extends AppCompatActivity {
     RandomRecipeAdapter randomRecipeAdapter;
     ComplexRecipeAdapter complexRecipeAdapter;
     RecyclerView recyclerView;
-    List<String> cuisinestr = new ArrayList<>();
-    List<String> querystr = new ArrayList<>();
+    //List<String> cuisinestr = new ArrayList<>();
+    String cuisine;
+    List<String> tags = new ArrayList<>();
     SearchView searchView;
 
 
@@ -43,16 +44,15 @@ public class Spoonacular extends AppCompatActivity {
         dialog.setTitle("Loading...");
 
         //Just grab the string using key
-        String cuisine = getIntent().getStringExtra("cuisine");
+        cuisine = getIntent().getStringExtra("cuisine");
 
         searchView = findViewById(R.id.searchView_home);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                querystr.clear();
-                cuisinestr.add(cuisine);
-                querystr.add(query);
-                manager.getComplexRecipes(complexRecipeResponselistener, cuisinestr, querystr);
+                tags.clear();
+                tags.add(query);
+                manager.getComplexRecipes(complexRecipeResponselistener,  tags);
                 Log.i("TAG Name", "I'm Spoonacular.java: " + cuisine + query);
                 dialog.show();
                 return true;
@@ -69,9 +69,13 @@ public class Spoonacular extends AppCompatActivity {
         //Sanity check for passed in cuisine name
         Log.i("TAG Name", "I'm Spoonacular.java: " + cuisine );
         manager = new RequestManager(this);
-        manager.getComplexRecipes((ComplexRecipeResponseListener) complexRecipeResponselistener, Collections.singletonList(cuisine), querystr);
+        tags.clear();
+        tags.add(cuisine);
+        //manager.getComplexRecipes((ComplexRecipeResponseListener) complexRecipeResponselistener, Collections.singletonList(cuisine), querystr);
+        manager.getComplexRecipes((ComplexRecipeResponseListener) complexRecipeResponselistener, tags);
         dialog.show();
     }
+
 
 //    private  final RandomRecipeResponseListener randomRecipeResponselistener = new RandomRecipeResponseListener() {
 //        @Override

@@ -43,7 +43,7 @@ public class RecipeInstructionsActivity extends AppCompatActivity {
         manager.getInstructions(instructionsListener, id);
 
         dialog = new ProgressDialog(this);
-        dialog.setTitle("Loading Detils...");
+        dialog.setTitle("Loading Details...");
         dialog.show();
     }
 

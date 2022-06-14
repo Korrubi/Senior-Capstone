@@ -28,11 +28,21 @@ class HomeViewModel : ViewModel() {
         get() = _currentHour
 
     //This uses the fixed 12:00 Noon
-    private val _NoonHour = MutableLiveData(LocalTime.NOON)
+    private val _noonHour = MutableLiveData(LocalTime.NOON)
 
-    val NoonHour: LiveData<LocalTime>
-        get() = _NoonHour
+    val noonHour: LiveData<LocalTime>
+        get() = _noonHour
 
+    private val _midnightHour = MutableLiveData(LocalTime.MIDNIGHT)
+
+    val midnightHour : LiveData<LocalTime>
+        get() = _midnightHour
+
+    //Set morning time as 06:00
+    private val _morningHour = MutableLiveData(LocalTime.of(6,0,0))
+
+    val morningHour : LiveData<LocalTime>
+        get() = _morningHour
 //    private val _DinnerHour = MutableLiveData(LocalTime.)
 
 }

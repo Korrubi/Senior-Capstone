@@ -11,6 +11,8 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <string name="activity_recipe_information">DynamicRatingBarInKotlin</string>
+
     <string name="menu_home">Home</string>
     <string name="menu_profile">My account</string>
     <string name="menu_settings">Settings</string>

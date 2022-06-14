@@ -68,29 +68,32 @@ class HomeFragment : Fragment() {
 
         //May 26th- Testing Time-Adjusted Carousel
         Log.i(ContentValues.TAG, "Current Hour: " + viewModel.currentHour.value)
-        Log.i(ContentValues.TAG, "Noon Time: " + viewModel.NoonHour.value)
+        Log.i(ContentValues.TAG, "Noon Time: " + viewModel.noonHour.value)
+        Log.i(ContentValues.TAG, "Morning Time: " + viewModel.morningHour.value)
 
         //Compare if current hour is after Noon (12:00)
         //If true we show some dinner pictures
-        if (viewModel.currentHour.value?.isAfter(viewModel.NoonHour.value) == true)
+        if (viewModel.currentHour.value?.isBefore(viewModel.noonHour.value) == true && viewModel.currentHour.value?.isAfter(viewModel.morningHour.value) == true)
         {
+
             Log.i(ContentValues.TAG, "Inside If")
-            carouselView.setPageCount(sampleImages.size);
-            carouselView.setImageListener(imageListener);
+            carouselView.setPageCount(sampleBreakfastImages.size);
+            carouselView.setImageListener(imageListener1);
 
             carouselView.setImageClickListener(ImageClickListener { position ->
                 Toast.makeText(activity, "Clicked item: $position", Toast.LENGTH_SHORT).show()
                 if(carouselView.currentItem == 3){
                     val action = HomeFragmentDirections.actionNavHomeToMealFragment()
                     root.findNavController().navigate(action)
+
                 }
             })
         }
         //Else show some breakfast pictures
         else {
             Log.i(ContentValues.TAG, "Inside Else")
-            carouselView.setPageCount(sampleBreakfastImages.size);
-            carouselView.setImageListener(imageListener1);
+            carouselView.setPageCount(sampleImages.size);
+            carouselView.setImageListener(imageListener);
 
             carouselView.setImageClickListener(ImageClickListener { position ->
                 Toast.makeText(activity, "Clicked item: $position", Toast.LENGTH_SHORT).show()

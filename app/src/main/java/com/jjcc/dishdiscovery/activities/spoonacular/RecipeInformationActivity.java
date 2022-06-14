@@ -1,12 +1,14 @@
 package com.jjcc.dishdiscovery.activities.spoonacular;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,13 +24,17 @@ import com.jjcc.dishdiscovery.activities.spoonacular.listeners.RecipeInformation
 import com.jjcc.dishdiscovery.activities.spoonacular.listeners.SimilarRecipesListener;
 import com.jjcc.dishdiscovery.activities.spoonacular.models.RecipeInformation.RecipeInformationResponse;
 import com.jjcc.dishdiscovery.activities.spoonacular.models.SimilarRecipe.SimilarRecipeApiResponse;
+import com.jjcc.dishdiscovery.activities.ui.meal.MealFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import xyz.hanks.library.bang.SmallBangView;
+
 public class RecipeInformationActivity extends AppCompatActivity {
     int id;
     String recipeName;
+    SmallBangView imageView;
     TextView textView_meal_name, textView_meal_source, textView_meal_summary;
     ImageView imageView_meal_image;
     RecyclerView recycler_meal_ingredients, recycler_similar;
@@ -42,6 +48,37 @@ public class RecipeInformationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_information);
+
+        //for the heart/like animation
+        imageView = findViewById(R.id.imageViewAnimation);
+        imageView.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (imageView.isSelected()) {
+                            imageView.setSelected(false);
+                        } else {
+                            // if not selected only
+                            // then show animation.
+                            imageView.setSelected(true);
+                            imageView.likeAnimation();
+                        }
+                    }
+                });
+
+        //Rating Bar
+        RatingBar rBar = findViewById(R.id.rBar);
+        if (rBar != null) {
+            RatingBar button = findViewById(R.id.rBar);
+            if (button != null) {
+                button.setOnClickListener((View.OnClickListener) (new View.OnClickListener() {
+                    public final void onClick(View it) {
+                        String msg = String.valueOf(rBar.getRating());
+                        Toast.makeText(RecipeInformationActivity.this, ("Rating is: " + msg), Toast.LENGTH_SHORT).show();
+                    }
+                }));
+            }
+        }
 
         //call find view
         findView();
