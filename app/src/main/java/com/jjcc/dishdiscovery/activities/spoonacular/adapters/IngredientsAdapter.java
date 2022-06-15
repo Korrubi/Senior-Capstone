@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsViewHolder>{
+public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsViewHolder> {
 
     Context context;
     List<ExtendedIngredient> list;
@@ -39,7 +39,7 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsViewHold
         holder.textView_ingredients_name.setSelected(true);
         holder.textView_ingredient_quantity.setText(list.get(position).original);
         holder.textView_ingredient_quantity.setSelected(true);
-        Picasso.get().load("https://spoonacular.com/cdn/ingredients_250x250/"+list.get(position).image).into(holder.imageView_ingredients);
+        Picasso.get().load("https://spoonacular.com/cdn/ingredients_250x250/" + list.get(position).image).into(holder.imageView_ingredients);
     }
 
     @Override
@@ -51,6 +51,7 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsViewHold
 class IngredientsViewHolder extends RecyclerView.ViewHolder {
     TextView textView_ingredient_quantity, textView_ingredients_name;
     ImageView imageView_ingredients;
+
     public IngredientsViewHolder(@NonNull View itemView) {
         super(itemView);
         textView_ingredient_quantity = itemView.findViewById(R.id.textView_ingredient_quantity);

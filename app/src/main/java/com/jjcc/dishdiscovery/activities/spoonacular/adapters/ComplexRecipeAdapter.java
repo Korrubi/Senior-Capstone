@@ -1,6 +1,8 @@
 package com.jjcc.dishdiscovery.activities.spoonacular.adapters;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +18,14 @@ import com.jjcc.dishdiscovery.activities.spoonacular.listeners.RecipeClickListen
 import com.jjcc.dishdiscovery.activities.spoonacular.models.complexSearch.Result;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
-public class ComplexRecipeAdapter extends RecyclerView.Adapter<ComplexRecipeViewHolder>{
+public class ComplexRecipeAdapter extends RecyclerView.Adapter<ComplexRecipeViewHolder> {
     Context context;
     List<Result> list;
     RecipeClickListener listener;
@@ -38,6 +45,7 @@ public class ComplexRecipeAdapter extends RecyclerView.Adapter<ComplexRecipeView
 
     @Override
     public void onBindViewHolder(@NonNull ComplexRecipeViewHolder holder, int position) {
+
         holder.textView_complex_title.setText(list.get(position).title);
         holder.textView_complex_title.setSelected(true);
         Picasso.get().load(list.get(position).image).into(holder.imageView_complex_food);
@@ -55,7 +63,6 @@ public class ComplexRecipeAdapter extends RecyclerView.Adapter<ComplexRecipeView
         return list.size();
     }
 }
-
 
 
 class ComplexRecipeViewHolder extends RecyclerView.ViewHolder {

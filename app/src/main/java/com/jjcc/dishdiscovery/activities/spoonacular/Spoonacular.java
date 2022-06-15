@@ -38,7 +38,7 @@ public class Spoonacular extends AppCompatActivity {
 
     Random random = new Random();
     int min = 0;
-    int max = 40;
+    int max = 5;
 
     int offset = random.nextInt(max + min);
 
@@ -59,7 +59,7 @@ public class Spoonacular extends AppCompatActivity {
             public boolean onQueryTextSubmit(String query) {
                 tags.clear();
                 tags.add(query);
-                manager.getComplexRecipes(complexRecipeResponselistener,  tags, 0);
+                manager.getComplexRecipes(complexRecipeResponselistener, tags, 0);
                 Log.i("TAG Name", "I'm Spoonacular.java: " + cuisine + query);
                 dialog.show();
                 return true;
@@ -72,9 +72,8 @@ public class Spoonacular extends AppCompatActivity {
         });
 
 
-
         //Sanity check for passed in cuisine name
-        Log.i("TAG Name", "I'm Spoonacular.java: " + cuisine );
+        Log.i("TAG Name", "I'm Spoonacular.java: " + cuisine);
         manager = new RequestManager(this);
         tags.clear();
         tags.add(cuisine);
@@ -83,26 +82,7 @@ public class Spoonacular extends AppCompatActivity {
         dialog.show();
     }
 
-
-//    private  final RandomRecipeResponseListener randomRecipeResponselistener = new RandomRecipeResponseListener() {
-//        @Override
-//        public void didFetch(RandomRecipeApiResponse response, String message) {
-//            dialog.dismiss();
-//            recyclerView = findViewById(R.id.recycler_random);
-//            recyclerView.setHasFixedSize(true);
-//            recyclerView.setLayoutManager(new GridLayoutManager(Spoonacular.this, 1));
-//            randomRecipeAdapter = new RandomRecipeAdapter(Spoonacular.this, response.recipes, recipeClickListener);
-//            recyclerView.setAdapter(randomRecipeAdapter);
-//        }
-//
-//        @Override
-//        public void didError(String message) {
-//            Toast.makeText(Spoonacular.this, message, Toast.LENGTH_SHORT).show();
-//        }
-//    };
-
-
-    private  final ComplexRecipeResponseListener complexRecipeResponselistener = new ComplexRecipeResponseListener() {
+    private final ComplexRecipeResponseListener complexRecipeResponselistener = new ComplexRecipeResponseListener() {
         @Override
         public void didFetch(ComplexRecipeApiResponse response, String message) {
             dialog.dismiss();
@@ -142,7 +122,6 @@ public class Spoonacular extends AppCompatActivity {
             startActivity(new Intent(Spoonacular.this, RecipeInformationActivity.class).putExtra("id", id));
         }
     };
-
 
 
 }

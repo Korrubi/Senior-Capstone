@@ -98,11 +98,11 @@ public class SpoonacularRecommend extends AppCompatActivity {
 //        offset*=10;
         //offset*=5;
 
-       // manager.getComplexRecipesRecommend((ComplexRecipeResponseListener) complexRecipeResponselistener1, intolerances, diet, cuisine, 0);
-       // Log.i(ContentValues.TAG, "MAX: " + max);
+        // manager.getComplexRecipesRecommend((ComplexRecipeResponseListener) complexRecipeResponselistener1, intolerances, diet, cuisine, 0);
+        // Log.i(ContentValues.TAG, "MAX: " + max);
 
 
-        manager.getComplexRecipesRecommend((ComplexRecipeResponseListener) complexRecipeResponselistener, intolerances, diet, cuisine, offset);
+        manager.getComplexRecipesRecommend((ComplexRecipeResponseListener) complexRecipeResponselistener, intolerances, diet, cuisine);
         Log.i(ContentValues.TAG, "OFFSET: " + offset);
 //        final Handler handler = new Handler();
 //        int finalOffset = offset;

@@ -1,6 +1,8 @@
 package com.jjcc.dishdiscovery.activities.spoonacular;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.util.Log;
 
 import com.jjcc.dishdiscovery.R;
 import com.jjcc.dishdiscovery.activities.spoonacular.listeners.ComplexRecipeResponseListener;
@@ -28,9 +30,9 @@ import retrofit2.http.Query;
 public class RequestManager {
     Context context;
     Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.spoonacular.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+            .baseUrl("https://api.spoonacular.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
 
     public RequestManager(Context context) {
         this.context = context;
@@ -42,7 +44,7 @@ public class RequestManager {
         call.enqueue(new Callback<RandomRecipeApiResponse>() {
             @Override
             public void onResponse(Call<RandomRecipeApiResponse> call, Response<RandomRecipeApiResponse> response) {
-                if(!response.isSuccessful()) {
+                if (!response.isSuccessful()) {
                     listener.didError(response.message());
                     return;
                 }
@@ -57,7 +59,6 @@ public class RequestManager {
     }
 
 
-
     public void getRecipeInformation(RecipeInformationListener listener, int id) {
         CallRecipeInformation callRecipeInformation = retrofit.create(CallRecipeInformation.class);
 
@@ -66,7 +67,7 @@ public class RequestManager {
         call.enqueue(new Callback<RecipeInformationResponse>() {
             @Override
             public void onResponse(Call<RecipeInformationResponse> call, Response<RecipeInformationResponse> response) {
-                if(!response.isSuccessful()) {
+                if (!response.isSuccessful()) {
                     listener.didError(response.message());
                     return;
                 }
@@ -81,15 +82,15 @@ public class RequestManager {
     }
 
 
-    public void getComplexRecipes(ComplexRecipeResponseListener listener,  List<String> query, int offset) {
+    public void getComplexRecipes(ComplexRecipeResponseListener listener, List<String> query, int offset) {
         CallComplexRecipes callComplexRecipes = retrofit.create(CallComplexRecipes.class);
 
-        Call<ComplexRecipeApiResponse> call = callComplexRecipes.callComplexRecipe(context.getString(R.string.api_key),"10", query, offset);
+        Call<ComplexRecipeApiResponse> call = callComplexRecipes.callComplexRecipe(context.getString(R.string.api_key), "10", query, offset);
 
         call.enqueue(new Callback<ComplexRecipeApiResponse>() {
             @Override
             public void onResponse(Call<ComplexRecipeApiResponse> call, Response<ComplexRecipeApiResponse> response) {
-                if(!response.isSuccessful()) {
+                if (!response.isSuccessful()) {
                     listener.didError(response.message());
                     return;
                 }
@@ -104,15 +105,16 @@ public class RequestManager {
 
     }
 
-    public void getComplexRecipesRecommend(ComplexRecipeResponseListener listener,  List<String> intolerance, List<String> diet, List<String> cuisine, int offset) {
+    public void getComplexRecipesRecommend(ComplexRecipeResponseListener listener, List<String> intolerance, List<String> diet, List<String> cuisine) {
         CallComplexRecipesRecommend callComplexRecipesRecommend = retrofit.create(CallComplexRecipesRecommend.class);
 
-        Call<ComplexRecipeApiResponse> call = callComplexRecipesRecommend.callComplexRecipeRecommend(context.getString(R.string.api_key),"5", intolerance, diet, cuisine, offset );
+        Call<ComplexRecipeApiResponse> call = callComplexRecipesRecommend.callComplexRecipeRecommend(context.getString(R.string.api_key), "10", intolerance, diet, cuisine);
+
 
         call.enqueue(new Callback<ComplexRecipeApiResponse>() {
             @Override
             public void onResponse(Call<ComplexRecipeApiResponse> call, Response<ComplexRecipeApiResponse> response) {
-                if(!response.isSuccessful()) {
+                if (!response.isSuccessful()) {
                     listener.didError(response.message());
                     return;
                 }
@@ -134,7 +136,7 @@ public class RequestManager {
         call.enqueue(new Callback<List<SimilarRecipeApiResponse>>() {
             @Override
             public void onResponse(Call<List<SimilarRecipeApiResponse>> call, Response<List<SimilarRecipeApiResponse>> response) {
-                if(!response.isSuccessful()) {
+                if (!response.isSuccessful()) {
                     listener.didError(response.message());
                     return;
                 }
@@ -148,14 +150,14 @@ public class RequestManager {
         });
     }
 
-    public void getInstructions(InstructionsListener listener, int id){
+    public void getInstructions(InstructionsListener listener, int id) {
         CallInstructions callInstructions = retrofit.create(CallInstructions.class);
 
         Call<List<InstructionResponse>> call = callInstructions.callInstructions(id, context.getString(R.string.api_key));
         call.enqueue(new Callback<List<InstructionResponse>>() {
             @Override
             public void onResponse(Call<List<InstructionResponse>> call, Response<List<InstructionResponse>> response) {
-                if(!response.isSuccessful()) {
+                if (!response.isSuccessful()) {
                     listener.didError(response.message());
                     return;
                 }
@@ -168,7 +170,6 @@ public class RequestManager {
             }
         });
     }
-
 
 
     private interface CallComplexRecipes {
@@ -188,8 +189,7 @@ public class RequestManager {
                 @Query("number") String number,
                 @Query("intolerances") List<String> intolerances,
                 @Query("diet") List<String> diet,
-                @Query("cuisine") List<String> cuisine,
-                @Query("offset") int offset
+                @Query("cuisine") List<String> cuisine
         );
     }
 
@@ -210,7 +210,7 @@ public class RequestManager {
         );
     }
 
-    private interface CallSimilar{
+    private interface CallSimilar {
         @GET("recipes/{id}/similar")
         Call<List<SimilarRecipeApiResponse>> callSimilar(
                 @Path("id") int id,
@@ -219,7 +219,7 @@ public class RequestManager {
         );
     }
 
-    private interface CallInstructions{
+    private interface CallInstructions {
         @GET("recipes/{id}/analyzedInstructions")
         Call<List<InstructionResponse>> callInstructions(
                 @Path("id") int id,

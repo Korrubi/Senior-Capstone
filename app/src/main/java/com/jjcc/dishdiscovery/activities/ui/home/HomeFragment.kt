@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
         R.drawable.carousel_lunch_burger
     )
 
-    var sampleBreakfastImages = intArrayOf (
+    var sampleBreakfastImages = intArrayOf(
         R.drawable.carousel_breakfast_pancakes,
         R.drawable.carousel_breakfast_muffin,
         R.drawable.carousel_breakfast_polenta,

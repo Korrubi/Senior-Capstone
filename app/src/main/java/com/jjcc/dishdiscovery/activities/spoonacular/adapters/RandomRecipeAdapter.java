@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHolder>{
+public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHolder> {
     Context context;
     List<Recipe> list;
 
@@ -37,9 +37,9 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
     public void onBindViewHolder(@NonNull RandomRecipeViewHolder holder, int position) {
         holder.textView_title.setText(list.get(position).title);
         holder.textView_title.setSelected(true);
-        holder.textView_likes.setText(list.get(position).aggregateLikes+" Likes");
-        holder.textView_servings.setText(list.get(position).servings+" Servinges");
-        holder.textView_time.setText(list.get(position).readyInMinutes+" Time");
+        holder.textView_likes.setText(list.get(position).aggregateLikes + " Likes");
+        holder.textView_servings.setText(list.get(position).servings + " Servinges");
+        holder.textView_time.setText(list.get(position).readyInMinutes + " Time");
         Picasso.get().load(list.get(position).image).into(holder.imageView_food);
     }
 
@@ -48,6 +48,7 @@ public class RandomRecipeAdapter extends RecyclerView.Adapter<RandomRecipeViewHo
         return list.size();
     }
 }
+
 class RandomRecipeViewHolder extends RecyclerView.ViewHolder {
 
     CardView random_list_container;
