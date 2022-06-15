@@ -9,6 +9,9 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import aws.sdk.kotlin.runtime.auth.credentials.StaticCredentialsProvider
+import aws.sdk.kotlin.services.dynamodb.DynamoDbClient
+import aws.sdk.kotlin.services.dynamodb.model.AttributeValue
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoDevice
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserSession
@@ -21,6 +24,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 import com.jjcc.dishdiscovery.R
+import kotlinx.coroutines.runBlocking
 
 class LoginActivity : AppCompatActivity() {
 
@@ -35,9 +39,8 @@ class LoginActivity : AppCompatActivity() {
         val textInputLayoutPassword = findViewById<TextInputLayout>(R.id.signInPassword)
         val inputPassword = textInputLayoutPassword.editText
 
-
         //Callback handler to authenticate User
-        val authenticationHandler = object: AuthenticationHandler {
+        val authenticationHandler = object : AuthenticationHandler {
 
             //if success
             override fun onSuccess(userSession: CognitoUserSession, newDevice: CognitoDevice?) {
@@ -54,26 +57,32 @@ class LoginActivity : AppCompatActivity() {
                 Log.i(TAG, "Access Token: " + userSession.accessToken.jwtToken)
                 Log.i(TAG, "Id Token: " + userSession.idToken.jwtToken)
 
-                Log.i(TAG, "Username: " + userSession.username )
+                Log.i(TAG, "Username: " + userSession.username)
                 Log.i(TAG, "is Valid? : " + userSession.isValid)
 
                 //Toast to let users know we redirected
-                Toast.makeText(this@LoginActivity, "Login success. Redirecting..", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@LoginActivity,
+                    "Login success. Redirecting..",
+                    Toast.LENGTH_SHORT
+                ).show()
 
                 //Pass tokens through intent to next Activity
                 val intent = Intent(this@LoginActivity, HomeActivity::class.java)
-
 //                intent.putExtra("Access Token", accessToken)
-//                intent.putExtra("Username", usernameToken)
+                intent.putExtra("User Sub", usernameToken)
                 startActivity(intent)
             }
 
-            override fun getAuthenticationDetails(authenticationContinuation: AuthenticationContinuation?, userId: String)
-            {
+            override fun getAuthenticationDetails(
+                authenticationContinuation: AuthenticationContinuation?,
+                userId: String
+            ) {
                 Log.i(TAG, "in getAuthenticationDetails() ...")
 
                 //need to get userID and password to continue
-                val authenticationDetails: AuthenticationDetails = AuthenticationDetails(userId, inputPassword?.text.toString(), null)
+                val authenticationDetails: AuthenticationDetails =
+                    AuthenticationDetails(userId, inputPassword?.text.toString(), null)
 
                 //Pass user sign-in credentials to the continuation
                 authenticationContinuation?.setAuthenticationDetails(authenticationDetails)
@@ -107,7 +116,8 @@ class LoginActivity : AppCompatActivity() {
                 var output = result?.value
 
 
-                val toast = Toast.makeText(this@LoginActivity, "Login failed: $output", Toast.LENGTH_SHORT)
+                val toast =
+                    Toast.makeText(this@LoginActivity, "Login failed: $output", Toast.LENGTH_SHORT)
                 toast.setGravity(Gravity.CENTER, 0, 0)
                 toast.show()
 
@@ -120,13 +130,17 @@ class LoginActivity : AppCompatActivity() {
 
         //clickListener for Login Button
         val buttonLogin = findViewById<Button>(R.id.signInButton)
-        buttonLogin.setOnClickListener(object: View.OnClickListener {
+        buttonLogin.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
 
-                if(inputUsername?.text.toString().isNullOrEmpty()){
-                    val toast = Toast.makeText(this@LoginActivity, "Please enter Username", Toast.LENGTH_SHORT)
-                    toast.setGravity(Gravity.CENTER, 0,0)
+                if (inputUsername?.text.toString().isNullOrEmpty()) {
+                    val toast = Toast.makeText(
+                        this@LoginActivity,
+                        "Please enter Username",
+                        Toast.LENGTH_SHORT
+                    )
+                    toast.setGravity(Gravity.CENTER, 0, 0)
                     toast.show()
                     return
                 }
@@ -135,7 +149,8 @@ class LoginActivity : AppCompatActivity() {
                 val cognitoSettings: CognitoSettings = CognitoSettings(this@LoginActivity)
 
                 //Make CognitoUser object
-                val thisUser: CognitoUser = cognitoSettings.userPool.getUser(inputUsername?.text.toString())
+                val thisUser: CognitoUser =
+                    cognitoSettings.userPool.getUser(inputUsername?.text.toString())
 
                 Log.i(TAG, "sign in button was clicked . . .")
 
@@ -166,7 +181,10 @@ class LoginActivity : AppCompatActivity() {
             }
             .show()
     }
+
     private fun showMsg(msg: String) {
         Snackbar.make(findViewById(android.R.id.content), msg, Snackbar.LENGTH_SHORT).show()
     }
+
+
 }

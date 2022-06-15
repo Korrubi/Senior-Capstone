@@ -1,9 +1,12 @@
 package com.jjcc.dishdiscovery.activities
 
 import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.view.Menu
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -11,17 +14,19 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import aws.sdk.kotlin.runtime.auth.credentials.StaticCredentialsProvider
+import aws.sdk.kotlin.services.dynamodb.DynamoDbClient
+import aws.sdk.kotlin.services.dynamodb.model.AttributeValue
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserDetails
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetailsHandler
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 import com.jjcc.dishdiscovery.R
+import com.jjcc.dishdiscovery.activities.ui.home.HomeFragmentDirections
 import com.jjcc.dishdiscovery.databinding.ActivityHomeNewBinding
-import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
 
@@ -34,6 +39,15 @@ class HomeActivity : AppCompatActivity() {
     var userName = ""
     var userEmail = ""
     var userSub = ""
+
+    //Map structures to retrieve from Database
+    var cuisineMap = mutableMapOf<String, AttributeValue>()
+    var dietMap = mutableMapOf<String, AttributeValue>()
+    var allergyMap = mutableMapOf<String, AttributeValue>()
+
+
+    //Bundle to pass to next fragment or activity that needs info
+    var bundleExtras = Bundle()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +68,14 @@ class HomeActivity : AppCompatActivity() {
                 R.id.nav_home, R.id.nav_profile, R.id.nav_settings
             ), drawerLayout
         )
+
+        MaterialAlertDialogBuilder(this@HomeActivity)
+            .setTitle("Welcome New User!")
+            .setMessage("Please set your Preferences in Profile Page.")
+            .setPositiveButton(R.string.verify_success_continue) { dialog, which ->
+                navController.navigate(R.id.nav_profile)
+            }
+            .show()
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
@@ -87,7 +109,6 @@ class HomeActivity : AppCompatActivity() {
                 Log.i(ContentValues.TAG, "Error: " + exception?.localizedMessage)
             }
         }
-
         CoroutineScope(IO).launch {
             val result = async { thisUser.getDetailsInBackground(detailsHandler) }.await()
             delay(1000)
@@ -98,12 +119,22 @@ class HomeActivity : AppCompatActivity() {
             intent.putExtra("User Email", userEmail)
             intent.putExtra("User Sub", userSub)
             Log.i(ContentValues.TAG, "Scope done")
+
+            //GET request to query the Table using id (partition key) to see existing data
+//            try {
+//                Log.i(ContentValues.TAG, "Before Retrieve Data")
+//                retrieveData()
+//                Log.i(ContentValues.TAG, "After Retrieve Data")
+//            } catch (ex: Exception) {
+//                Log.i(ContentValues.TAG, "No initial Data: " + ex.message)
+//            }
         }
     }
 
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.options_menu, menu)
+//        menuInflater.inflate(R.menu.options_menu, menu)
         return true
     }
 
@@ -111,4 +142,5 @@ class HomeActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_home_activity_new)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }

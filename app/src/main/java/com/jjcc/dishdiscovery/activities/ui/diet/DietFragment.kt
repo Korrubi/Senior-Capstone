@@ -126,7 +126,7 @@ class DietFragment : Fragment() {
                     val ketoBox: CheckBox = view.findViewById(R.id.ketoDiet)
                     ketoBox.isChecked = true;
                 }
-                if (key1.key.equals("Pescetarian")) {
+                if (key1.key.equals("Pescatarian")) {
                     val pescaBox: CheckBox = view.findViewById(R.id.pescaDiet)
                     pescaBox.isChecked = true;
                 }
@@ -227,7 +227,7 @@ class DietFragment : Fragment() {
         val vegetarianDietVal = vegetarian.isChecked
         val veganDiet = "Vegan"
         val veganDietVal = vegan.isChecked
-        val pescatarianDiet = "Pescetarian"
+        val pescatarianDiet = "Pescatarian"
         val pescatarianDietVal = pescatarian.isChecked
         val lactoVegeDiet = "Lacto-Vegetarian"
         val lactoDietVal = lactoVege.isChecked

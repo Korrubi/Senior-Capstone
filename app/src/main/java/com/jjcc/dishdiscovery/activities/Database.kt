@@ -212,6 +212,33 @@ class Database {
 //        }
     }
 
+    suspend fun putFirstLogin(
+        ddb: DynamoDbClient,
+        tableNameVal: String,
+        key: String,
+        keyVal: String,
+        loginCheck: String,
+        loginBool: Boolean
+    ) {
+        val itemValues = mutableMapOf<String, AttributeValue>()
+        itemValues[loginCheck] = AttributeValue.Bool(loginBool)
+
+        val request = PutItemRequest {
+            tableName = tableNameVal
+            item = itemValues
+        }
+
+        try {
+            ddb.putItem(request)
+            //println(" A new item was placed into $tableNameVal.")
+
+        } catch (ex: DynamoDbException) {
+            println(ex.message)
+            ddb.close()
+            exitProcess(0)
+        }
+    }
+
     //PUT request to add an item to Table Allergy
     suspend fun putItemInTableAllergy(
         ddb: DynamoDbClient,

@@ -81,10 +81,33 @@ public class RequestManager {
     }
 
 
-    public void getComplexRecipes(ComplexRecipeResponseListener listener,  List<String> query) {
+    public void getComplexRecipes(ComplexRecipeResponseListener listener,  List<String> query, int offset) {
         CallComplexRecipes callComplexRecipes = retrofit.create(CallComplexRecipes.class);
 
-        Call<ComplexRecipeApiResponse> call = callComplexRecipes.callComplexRecipe(context.getString(R.string.api_key),"10", query);
+        Call<ComplexRecipeApiResponse> call = callComplexRecipes.callComplexRecipe(context.getString(R.string.api_key),"10", query, offset);
+
+        call.enqueue(new Callback<ComplexRecipeApiResponse>() {
+            @Override
+            public void onResponse(Call<ComplexRecipeApiResponse> call, Response<ComplexRecipeApiResponse> response) {
+                if(!response.isSuccessful()) {
+                    listener.didError(response.message());
+                    return;
+                }
+                listener.didFetch(response.body(), response.message());
+            }
+
+            @Override
+            public void onFailure(Call<ComplexRecipeApiResponse> call, Throwable t) {
+                listener.didError(t.getMessage());
+            }
+        });
+
+    }
+
+    public void getComplexRecipesRecommend(ComplexRecipeResponseListener listener,  List<String> intolerance, List<String> diet, List<String> cuisine, int offset) {
+        CallComplexRecipesRecommend callComplexRecipesRecommend = retrofit.create(CallComplexRecipesRecommend.class);
+
+        Call<ComplexRecipeApiResponse> call = callComplexRecipesRecommend.callComplexRecipeRecommend(context.getString(R.string.api_key),"5", intolerance, diet, cuisine, offset );
 
         call.enqueue(new Callback<ComplexRecipeApiResponse>() {
             @Override
@@ -153,7 +176,20 @@ public class RequestManager {
         Call<ComplexRecipeApiResponse> callComplexRecipe(
                 @Query("apiKey") String apiKey,
                 @Query("number") String number,
-                @Query("query") List<String> query
+                @Query("query") List<String> query,
+                @Query("offset") int offset
+        );
+    }
+
+    private interface CallComplexRecipesRecommend {
+        @GET("recipes/complexSearch")
+        Call<ComplexRecipeApiResponse> callComplexRecipeRecommend(
+                @Query("apiKey") String apiKey,
+                @Query("number") String number,
+                @Query("intolerances") List<String> intolerances,
+                @Query("diet") List<String> diet,
+                @Query("cuisine") List<String> cuisine,
+                @Query("offset") int offset
         );
     }
 

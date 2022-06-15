@@ -49,7 +49,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         Log.i(ContentValues.TAG, "Test String2: " + viewModel.userSub.value)
 //        Log.i(ContentValues.TAG, "Current Time: " + viewModel.currentTime.value)
 
-
 //        val textView: TextView = binding.textGallery
 //        galleryViewModel.text.observe(viewLifecycleOwner) {
 //            textView.text = it

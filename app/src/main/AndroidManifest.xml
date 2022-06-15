@@ -39,6 +39,9 @@
             android:name=".activities.spoonacular.Spoonacular"
             android:exported="false" />
         <activity
+            android:name=".activities.spoonacular.SpoonacularRecommend"
+            android:exported="false" />
+        <activity
             android:name=".activities.spoonacular.RecipeInformationActivity"
             android:exported="false" />
         <activity

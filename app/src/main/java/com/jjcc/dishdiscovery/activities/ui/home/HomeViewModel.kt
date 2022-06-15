@@ -5,6 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import java.time.LocalDateTime
 import java.time.LocalTime
+import aws.sdk.kotlin.runtime.auth.credentials.StaticCredentialsProvider
+import aws.sdk.kotlin.services.dynamodb.DynamoDbClient
+import aws.sdk.kotlin.services.dynamodb.model.AttributeValue
 
 class HomeViewModel : ViewModel() {
 
@@ -44,5 +47,6 @@ class HomeViewModel : ViewModel() {
     val morningHour : LiveData<LocalTime>
         get() = _morningHour
 //    private val _DinnerHour = MutableLiveData(LocalTime.)
+
 
 }

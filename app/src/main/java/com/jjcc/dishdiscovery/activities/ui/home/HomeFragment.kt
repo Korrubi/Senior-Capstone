@@ -13,35 +13,52 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import aws.sdk.kotlin.runtime.auth.credentials.StaticCredentialsProvider
+import aws.sdk.kotlin.services.dynamodb.DynamoDbClient
+import aws.sdk.kotlin.services.dynamodb.model.AttributeValue
 import com.jjcc.dishdiscovery.R
+import com.jjcc.dishdiscovery.activities.Database
+import com.jjcc.dishdiscovery.activities.spoonacular.RecipeInformationActivity
 import com.jjcc.dishdiscovery.activities.spoonacular.Spoonacular
+import com.jjcc.dishdiscovery.activities.spoonacular.SpoonacularRecommend
 import com.jjcc.dishdiscovery.databinding.FragmentHomeBinding
 import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageClickListener
 import com.synnapps.carouselview.ImageListener
 import kotlinx.coroutines.*
+import java.lang.Exception
 
 class HomeFragment : Fragment() {
     var sampleImages = intArrayOf(
-        R.drawable.carousel_1,
-        R.drawable.carousel_2,
-        R.drawable.carousel_3,
-        R.drawable.carousel_4,
-        R.drawable.carousel_5
+        R.drawable.carousel_lunch_burrito,
+        R.drawable.carousel_lunch_ramen,
+        R.drawable.carousel_lunch_lahmacun,
+        R.drawable.carousel_lunch_potato,
+        R.drawable.carousel_lunch_burger
     )
 
     var sampleBreakfastImages = intArrayOf (
-        R.drawable.carousel_bfast_1,
-        R.drawable.carousel_bfast_2,
-        R.drawable.carousel_bfast_3,
-        R.drawable.carousel_bfast_4,
-        R.drawable.carousel_bfast_5,
+        R.drawable.carousel_breakfast_pancakes,
+        R.drawable.carousel_breakfast_muffin,
+        R.drawable.carousel_breakfast_polenta,
+        R.drawable.carousel_breakfast_quesadilla,
+        R.drawable.carousel_breakfast_birthday_pancake,
     )
 
     //Initialize name and email of a given user
 //    var userName = ""
 //    var userEmail = ""
 //    var userSub = ""
+
+
+    //Map structures to retrieve from Database
+    var cuisineMap = mutableMapOf<String, AttributeValue>()
+    var dietMap = mutableMapOf<String, AttributeValue>()
+    var allergyMap = mutableMapOf<String, AttributeValue>()
+
+    //Bundle to pass to next fragment or activity that needs info
+    var bundleExtras = Bundle()
+
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -63,6 +80,10 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        //Grab userSub from previous intent (LoginActivity)
+        val intent = activity?.intent;
+        var userSub = intent?.getStringExtra("User Sub").toString()
+
         //For Carousel, display images according to time
         val carouselView = root.findViewById(R.id.carouselView1) as CarouselView;
 
@@ -71,10 +92,12 @@ class HomeFragment : Fragment() {
         Log.i(ContentValues.TAG, "Noon Time: " + viewModel.noonHour.value)
         Log.i(ContentValues.TAG, "Morning Time: " + viewModel.morningHour.value)
 
-        //Compare if current hour is after Noon (12:00)
-        //If true we show some dinner pictures
-        if (viewModel.currentHour.value?.isBefore(viewModel.noonHour.value) == true && viewModel.currentHour.value?.isAfter(viewModel.morningHour.value) == true)
-        {
+        //Compare if current hour is before Noon (12:00)
+        //If true we show breakfast
+        if (viewModel.currentHour.value?.isBefore(viewModel.noonHour.value) == true && viewModel.currentHour.value?.isAfter(
+                viewModel.morningHour.value
+            ) == true
+        ) {
 
             Log.i(ContentValues.TAG, "Inside If")
             carouselView.setPageCount(sampleBreakfastImages.size);
@@ -82,28 +105,103 @@ class HomeFragment : Fragment() {
 
             carouselView.setImageClickListener(ImageClickListener { position ->
                 Toast.makeText(activity, "Clicked item: $position", Toast.LENGTH_SHORT).show()
-                if(carouselView.currentItem == 3){
-                    val action = HomeFragmentDirections.actionNavHomeToMealFragment()
-                    root.findNavController().navigate(action)
+                if (carouselView.currentItem == 0) {
 
+                    var intent = Intent(this.context, RecipeInformationActivity::class.java)
+                    intent.putExtra("id", "1697551")
+                    startActivity(intent)
+
+                    /*val action = HomeFragmentDirections.actionNavHomeToMealFragment()
+                    root.findNavController().navigate(action)*/
+                }
+                if (carouselView.currentItem == 1) {
+
+                    var intent = Intent(this.context, RecipeInformationActivity::class.java)
+                    intent.putExtra("id", "41365")
+                    startActivity(intent)
+
+                    /*val action = HomeFragmentDirections.actionNavHomeToMealFragment()
+                    root.findNavController().navigate(action)*/
+                }
+                if (carouselView.currentItem == 2) {
+
+                    var intent = Intent(this.context, RecipeInformationActivity::class.java)
+                    intent.putExtra("id", "83235")
+                    startActivity(intent)
+
+                    /*val action = HomeFragmentDirections.actionNavHomeToMealFragment()
+                    root.findNavController().navigate(action)*/
+                }
+                if (carouselView.currentItem == 3) {
+
+                    var intent = Intent(this.context, RecipeInformationActivity::class.java)
+                    intent.putExtra("id", "80801")
+                    startActivity(intent)
+
+                    /*val action = HomeFragmentDirections.actionNavHomeToMealFragment()
+                    root.findNavController().navigate(action)*/
+                }
+                if (carouselView.currentItem == 4) {
+
+                    var intent = Intent(this.context, RecipeInformationActivity::class.java)
+                    intent.putExtra("id", "635001")
+                    startActivity(intent)
                 }
             })
         }
-        //Else show some breakfast pictures
+        //Else show some lunch
         else {
             Log.i(ContentValues.TAG, "Inside Else")
             carouselView.setPageCount(sampleImages.size);
             carouselView.setImageListener(imageListener);
 
             carouselView.setImageClickListener(ImageClickListener { position ->
-                Toast.makeText(activity, "Clicked item: $position", Toast.LENGTH_SHORT).show()
-                if(carouselView.currentItem == 3){
-                    val action = HomeFragmentDirections.actionNavHomeToMealFragment()
-                    root.findNavController().navigate(action)
+                Toast.makeText(activity, "Clicked item: $position", Toast.LENGTH_SHORT)
+                    .show()
+                if (carouselView.currentItem == 0) {
+
+                    var intent = Intent(this.context, RecipeInformationActivity::class.java)
+                    intent.putExtra("id", "795794")
+                    startActivity(intent)
+
+                    /*val action = HomeFragmentDirections.actionNavHomeToMealFragment()
+                    root.findNavController().navigate(action)*/
+                }
+                if (carouselView.currentItem == 1) {
+
+                    var intent = Intent(this.context, RecipeInformationActivity::class.java)
+                    intent.putExtra("id", "1138672")
+                    startActivity(intent)
+
+                    /*val action = HomeFragmentDirections.actionNavHomeToMealFragment()
+                    root.findNavController().navigate(action)*/
+                }
+                if (carouselView.currentItem == 2) {
+
+                    var intent = Intent(this.context, RecipeInformationActivity::class.java)
+                    intent.putExtra("id", "1481259")
+                    startActivity(intent)
+
+                    /*val action = HomeFragmentDirections.actionNavHomeToMealFragment()
+                    root.findNavController().navigate(action)*/
+                }
+                if (carouselView.currentItem == 3) {
+
+                    var intent = Intent(this.context, RecipeInformationActivity::class.java)
+                    intent.putExtra("id", "508918")
+                    startActivity(intent)
+
+                    /*val action = HomeFragmentDirections.actionNavHomeToMealFragment()
+                    root.findNavController().navigate(action)*/
+                }
+                if (carouselView.currentItem == 4) {
+
+                    var intent = Intent(this.context, RecipeInformationActivity::class.java)
+                    intent.putExtra("id", "751214")
+                    startActivity(intent)
                 }
             })
         }
-
 //        val textView: TextView = binding.textHome
 //        homeViewModel.text.observe(viewLifecycleOwner) {
 //            textView.text = it
@@ -122,69 +220,22 @@ class HomeFragment : Fragment() {
 //            }
 //        })
 
-        //April 18th Update -- Try moving things from homeactivity.kt to here
+        //GET request to query the Table using id (partition key) to see existing data
+        try {
+            Log.i(ContentValues.TAG, "Before Retrieve Data")
+            retrieveData(userSub)
+            Log.i(ContentValues.TAG, "After Retrieve Data")
+        } catch (ex: Exception) {
+            Log.i(ContentValues.TAG, "No initial Data: " + ex.message)
+        }
 
-        //Initialize name and email of a given user to hold information for Cognito
-//        var userName = ""
-//        var userEmail = ""
-////        val bundle = Bundle()
-//        val intent = Intent()
-//
-//        //Make cognitoSettings and CognitoUser object to grab info using tokens
-//        val cognitoSettings: CognitoSettings = CognitoSettings(this.context)
-//        val thisUser : CognitoUser = cognitoSettings.userPool.currentUser
-//
-//        //callback Handler to perform getAttributes() call from cognitoUser
-//        val detailsHandler = object: GetDetailsHandler {
-//            override fun onSuccess(cognitoUserDetails: CognitoUserDetails?) {
-//                Log.i(ContentValues.TAG, "GetDetailsHandler succeeded!")
-//                Log.i(ContentValues.TAG, "Attributes Returned: " + cognitoUserDetails?.attributes?.attributes)
-//
-//                userName = cognitoUserDetails?.attributes?.attributes?.getValue("name").toString()
-//                userEmail = cognitoUserDetails?.attributes?.attributes?.getValue("email").toString()
-//                Log.i(ContentValues.TAG, "Username: $userName")
-//                Log.i(ContentValues.TAG, "Email: $userEmail")
-//            }
-//
-//            override fun onFailure(exception: Exception?) {
-//                Log.i(ContentValues.TAG, "GetDetailsHandler Failed!")
-//                Log.i(ContentValues.TAG, "Error: " + exception?.localizedMessage)
-//            }
-//        }
-//
-//        CoroutineScope(Dispatchers.IO).launch {
-//            val result = async { thisUser.getDetailsInBackground(detailsHandler)}.await()
-//            //            delay(1000)
-//            Log.i(ContentValues.TAG, "Start of CoroutineScope")
-//
-//            Log.i(ContentValues.TAG, "userName: $userName")
-//            Log.i(ContentValues.TAG, "userEmail: $userEmail")
-//
-//            intent.putExtra("User Name", userName)
-//            intent.putExtra("User Email", userEmail)
-//
-//            Log.i(ContentValues.TAG, "Scope done")
-//        }
-
-//
-////        var homeIntent = Intent(this.context)
-////        savedInstanceState.putString("User Name", userName)
-//
-////        activity?.let{
-////            val intent = Intent (it, HomeFragment::class.java)
-////
-////        }
-
-//
-//        val fragmentB = ProfileFragment()
-//        fragmentB.arguments = bundle
 
         //Get reference to thai button
         val thaiButton = root.findViewById(R.id.thai) as ImageButton;
 
         //Set click listener to it
         thaiButton.setOnClickListener {
-            Log.i(ContentValues.TAG,"I'm Thai Button");
+            Log.i(ContentValues.TAG, "I'm Thai Button");
             var intent = Intent(this.context, Spoonacular::class.java)
             intent.putExtra("cuisine", "thai")
             startActivity(intent)
@@ -195,7 +246,7 @@ class HomeFragment : Fragment() {
 
         //Set click listener to it
         chineseButton.setOnClickListener {
-            Log.i(ContentValues.TAG,"I'm Thai Button");
+            Log.i(ContentValues.TAG, "I'm Thai Button");
             var intent = Intent(this.context, Spoonacular::class.java)
             intent.putExtra("cuisine", "chinese")
             startActivity(intent)
@@ -369,7 +420,116 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        //Recommend me button, pass bundles in
+        val recommendButton = root.findViewById(R.id.recommend_me) as ImageButton;
+        recommendButton.setOnClickListener {
+            var intent = Intent(this.context, SpoonacularRecommend::class.java)
+            intent.putExtras(bundleExtras)
+            startActivity(intent)
+        }
+
         return root
+    }
+
+    private fun retrieveData(userSub: String) = runBlocking {
+
+        val data = Database()
+
+        val staticCredentials = StaticCredentialsProvider {
+            accessKeyId = "AKIA6NAG43PU374JR37G"
+            secretAccessKey = "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"
+        }
+
+        val ddb = DynamoDbClient {
+            region = "us-west-2"
+            credentialsProvider = staticCredentials
+        }
+
+        //May 17th - Testing Adding UserSub to identify a user
+//        val intent = activity?.intent;
+//        var userSub = intent?.getStringExtra("User Sub").toString()
+
+        val tableName = "Cuisine";
+        val partitionKeyName = "id";
+        val partitionKeyVal = userSub;
+
+        // For more information about an alias, see:
+        // https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ExpressionAttributeNames.html
+        val partitionAlias = "#a"
+//        val count = data.queryDynTable(ddb, tableName, partitionKeyName, partitionKeyVal, partitionAlias)
+        cuisineMap = data.getSpecificItem(
+            ddb,
+            tableName,
+            partitionKeyName,
+            partitionKeyVal
+        ) as MutableMap<String, AttributeValue>
+
+
+        //Make array lists to hold data
+        var cuisineArrayList = arrayListOf<String>()
+        var dietArrayList = arrayListOf<String>()
+        var allergyArrayList = arrayListOf<String>()
+
+        //Mapping the items retrieved
+        cuisineMap.forEach { key1 ->
+            if (key1.value.toString().equals("Bool(value=true)")) {
+                cuisineArrayList.add(key1.key)
+                //Log.i(ContentValues.TAG, "Key: " + key1.key + " Value: " + key1.value)
+            }
+        }
+
+        val tableName1 = "Diet";
+        dietMap = data.getSpecificItem(
+            ddb,
+            tableName1,
+            partitionKeyName,
+            partitionKeyVal
+        ) as MutableMap<String, AttributeValue>
+
+        //Mapping the items retrieved
+        dietMap.forEach { key1 ->
+            if (key1.value.toString().equals("Bool(value=true)")) {
+                dietArrayList.add(key1.key)
+                //Log.i(ContentValues.TAG, "Key: " + key1.key + " Value: " + key1.value)
+            }
+        }
+
+        val tableName2 = "Allergy"
+        allergyMap = data.getSpecificItem(
+            ddb,
+            tableName2,
+            partitionKeyName,
+            partitionKeyVal
+        ) as MutableMap<String, AttributeValue>
+
+        //Mapping the items retrieved
+        allergyMap.forEach { key1 ->
+            if (key1.value.toString().equals("Bool(value=true)")) {
+                allergyArrayList.add(key1.key)
+                //Log.i(ContentValues.TAG, "Key: " + key1.key + " Value: " + key1.value)
+            }
+        }
+
+
+        Log.i(ContentValues.TAG, "Cuisine Array List: " + cuisineArrayList.toString())
+        Log.i(ContentValues.TAG, "Diet Array List: " + dietArrayList.toString())
+        Log.i(ContentValues.TAG, "Allergy Array List: " + allergyArrayList.toString())
+
+        bundleExtras.putSerializable("Cuisine", cuisineArrayList)
+        bundleExtras.putSerializable("Diet", dietArrayList)
+        bundleExtras.putSerializable("Allergy", allergyArrayList)
+//        bundleExtras.putStringArrayList("Cuisine", cuisineArrayList)
+//        bundleExtras.putStringArrayList("Diet", dietArrayList)
+//        bundleExtras.putStringArrayList("Allergy", allergyArrayList)
+
+        Log.i(ContentValues.TAG, "BUNDLE Cuisine:  " + bundleExtras.getSerializable("Cuisine"))
+        Log.i(ContentValues.TAG, "BUNDLE Diet:  " + bundleExtras.getSerializable("Diet"))
+        Log.i(ContentValues.TAG, "BUNDLE Allergy:  " + bundleExtras.getSerializable("Allergy"))
+//        Log.i(ContentValues.TAG, "BUNDLE Allergy:  " + bundleExtras.getStringArrayList("Allergy"))
+//        Log.i(ContentValues.TAG, "BUNDLE Cuisine:  " + bundleExtras.getStringArrayList("Cuisine"))
+//        Log.i(ContentValues.TAG, "BUNDLE Diet:  " + bundleExtras.getStringArrayList("Diet"))
+
+//        Log.i(ContentValues.TAG, "Count: " + count)
     }
 
     // Carousel
@@ -392,4 +552,6 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }

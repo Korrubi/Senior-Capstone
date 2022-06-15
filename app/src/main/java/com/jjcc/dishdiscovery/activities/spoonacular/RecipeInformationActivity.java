@@ -1,6 +1,7 @@
 package com.jjcc.dishdiscovery.activities.spoonacular;
 
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -70,7 +71,9 @@ public class RecipeInformationActivity extends AppCompatActivity {
         RatingBar rBar = findViewById(R.id.rBar);
         if (rBar != null) {
             RatingBar button = findViewById(R.id.rBar);
+
             if (button != null) {
+                Log.i(ContentValues.TAG, "Hello");
                 button.setOnClickListener((View.OnClickListener) (new View.OnClickListener() {
                     public final void onClick(View it) {
                         String msg = String.valueOf(rBar.getRating());
@@ -86,6 +89,7 @@ public class RecipeInformationActivity extends AppCompatActivity {
         //get id from string extra
         id = Integer.parseInt(getIntent().getStringExtra("id"));
 
+        Log.i(ContentValues.TAG, "FoodID:" + id);
         manager = new RequestManager(this);
         manager.getRecipeInformation(recipeInformationLister, id);
         manager.getSimilarRecipes(similarRecipesListener, id);
@@ -171,14 +175,13 @@ public class RecipeInformationActivity extends AppCompatActivity {
         }
     };
 
-    public void openNewActivity(String id){
+    public void openNewActivity(String id) {
         Intent intent = new Intent(RecipeInformationActivity.this, RecipeInstructionsActivity.class);
         Bundle extras = new Bundle();
         extras.putString("id", id);
         extras.putString("recipeName", recipeName);
         intent.putExtras(extras);
         startActivity(intent);
-
 
 
         //startActivity(new Intent(RecipeInformationActivity.this, RecipeInstructionsActivity.class).putExtra("id", id));
