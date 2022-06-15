@@ -79,7 +79,7 @@ class UserVerifyActivity : AppCompatActivity(){
             val result: MatchResult? = pattern.find(successMsg)
             var output = result?.value
 
-            val intent = Intent(this@UserVerifyActivity, HomeActivity::class.java)
+            val intent = Intent(this@UserVerifyActivity, LoginActivity::class.java)
 
             MaterialAlertDialogBuilder(this@UserVerifyActivity)
                 .setTitle(R.string.verify_success_title)

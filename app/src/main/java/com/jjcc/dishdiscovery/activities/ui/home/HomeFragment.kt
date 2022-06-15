@@ -26,6 +26,7 @@ import com.synnapps.carouselview.CarouselView
 import com.synnapps.carouselview.ImageClickListener
 import com.synnapps.carouselview.ImageListener
 import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers.IO
 import java.lang.Exception
 
 class HomeFragment : Fragment() {
@@ -219,6 +220,7 @@ class HomeFragment : Fragment() {
 //                root.findNavController().navigate(action)
 //            }
 //        })
+
 
         //GET request to query the Table using id (partition key) to see existing data
         try {
@@ -510,26 +512,22 @@ class HomeFragment : Fragment() {
             }
         }
 
+        try {
+            Log.i(ContentValues.TAG, "Cuisine Array List: " + cuisineArrayList.toString())
+            Log.i(ContentValues.TAG, "Diet Array List: " + dietArrayList.toString())
+            Log.i(ContentValues.TAG, "Allergy Array List: " + allergyArrayList.toString())
 
-        Log.i(ContentValues.TAG, "Cuisine Array List: " + cuisineArrayList.toString())
-        Log.i(ContentValues.TAG, "Diet Array List: " + dietArrayList.toString())
-        Log.i(ContentValues.TAG, "Allergy Array List: " + allergyArrayList.toString())
+            bundleExtras.putSerializable("Cuisine", cuisineArrayList)
+            bundleExtras.putSerializable("Diet", dietArrayList)
+            bundleExtras.putSerializable("Allergy", allergyArrayList)
 
-        bundleExtras.putSerializable("Cuisine", cuisineArrayList)
-        bundleExtras.putSerializable("Diet", dietArrayList)
-        bundleExtras.putSerializable("Allergy", allergyArrayList)
-//        bundleExtras.putStringArrayList("Cuisine", cuisineArrayList)
-//        bundleExtras.putStringArrayList("Diet", dietArrayList)
-//        bundleExtras.putStringArrayList("Allergy", allergyArrayList)
+            Log.i(ContentValues.TAG, "BUNDLE Cuisine:  " + bundleExtras.getSerializable("Cuisine"))
+            Log.i(ContentValues.TAG, "BUNDLE Diet:  " + bundleExtras.getSerializable("Diet"))
+            Log.i(ContentValues.TAG, "BUNDLE Allergy:  " + bundleExtras.getSerializable("Allergy"))
+        } catch (ex: Exception) {
+            Log.i(ContentValues.TAG, "Maps are empty" + ex)
+        }
 
-        Log.i(ContentValues.TAG, "BUNDLE Cuisine:  " + bundleExtras.getSerializable("Cuisine"))
-        Log.i(ContentValues.TAG, "BUNDLE Diet:  " + bundleExtras.getSerializable("Diet"))
-        Log.i(ContentValues.TAG, "BUNDLE Allergy:  " + bundleExtras.getSerializable("Allergy"))
-//        Log.i(ContentValues.TAG, "BUNDLE Allergy:  " + bundleExtras.getStringArrayList("Allergy"))
-//        Log.i(ContentValues.TAG, "BUNDLE Cuisine:  " + bundleExtras.getStringArrayList("Cuisine"))
-//        Log.i(ContentValues.TAG, "BUNDLE Diet:  " + bundleExtras.getStringArrayList("Diet"))
-
-//        Log.i(ContentValues.TAG, "Count: " + count)
     }
 
     // Carousel
