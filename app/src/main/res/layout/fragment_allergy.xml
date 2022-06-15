@@ -333,7 +333,7 @@
                     android:background="@drawable/rectangle"
                     android:fontFamily="@font/avenir_roman"
                     android:onClick="submitData"
-                    android:text="@string/Done"
+                    android:text="@string/save_AllergyPref"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     app:backgroundTint="#5750A74E"></Button>
